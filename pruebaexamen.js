@@ -1,4 +1,4 @@
-var preguntas_examen = '{"preguntas":[{"codigo":0,"enunciado":"La capital de España es...","respuesta1":"Madrid","respuesta2":"Barcelona","respuesta3":"Sevilla","correcta":"1"},\
+var jsonPreguntas = '{"preguntas":[{"codigo":0,"enunciado":"La capital de España es...","respuesta1":"Madrid","respuesta2":"Barcelona","respuesta3":"Sevilla","correcta":"1"},\
 {"codigo":1,"enunciado":"La suma de dos y dos son...","respuesta1":"3","respuesta2":"4","respuesta3":"5","correcta":"2"},\
 {"codigo":2,"enunciado":"El rio Pisuerga pasa por...","respuesta1":"Murcia","respuesta2":"Almería","respuesta3":"Valladolid","correcta":"3"},\
 {"codigo":3,"enunciado":"El día de Navidad es el 25 de...","respuesta1":"Enero","respuesta2":"Noviembre","respuesta3":"Diciembre","correcta":"3"},\
@@ -9,7 +9,7 @@ var preguntas_examen = '{"preguntas":[{"codigo":0,"enunciado":"La capital de Esp
 {"codigo":8,"enunciado":"El platano es de color...","respuesta1":"Amarillo","respuesta2":"Azul","respuesta3":"Verde","correcta":"1"},\
 {"codigo":9,"enunciado":"Que mar limita por el este a la península iberica...","respuesta1":"Atlántico","respuesta2":"Negro","respuesta3":"Mediterráneo","correcta":"3"}]}';
 
-var alumnos = '{"examenes":[\
+var jsonRespuestas = '{"examenes":[\
     {"nombre":"marcos","respuestas":[\
         {"codigo":"0","respuesta":"2"},\
         {"codigo":"1","respuesta":"1"},\
@@ -108,20 +108,35 @@ var alumnos = '{"examenes":[\
     ],"puntuacion":"0"}\
 ]}';
 
-var objeto_alum = JSON.parse(alumnos, function(key,value){
-    if(key=="codigo"){
-        return value;
-    }else{
-        return value;
+var plantilla = [];
+var estadisticas ={aprobados:0,suspensos:0};
+
+var objRespuestas = JSON.parse(jsonRespuestas, function(k,v){
+    if(k=="respuestas"){
+        this.puntuacion=corregir(plantilla,v);
+        return v;
     }
 });
-var objeto_preguntas = JSON.parse(preguntas_examen, function(key, value){
-    if(key!=""){
-        return value;
-    }else {
-        return value;
+var objPreguntas = JSON.parse(jsonPreguntas, function(k, v){
+    if(k=="codigo"){
+        plantilla[v]=this.correcta;
+        return v;
     }
 });
 
-console.log(objeto_preguntas);
-console.log(objeto_alum);
+function corregir(_plantilla,_respuestas){
+    var puntos =0;
+    _respuestas.forEach((x) => {
+        x.respuesta==_plantilla[x.codigo] ? puntos++ : puntos=puntos;
+    });
+    return puntos;
+}
+
+var jsonCorregido = JSON.stringify(objRespuestas, function(k,v){
+    if(k=="puntuacion"){
+        (v>=5)?estadisticas.aprobados++:estadisticas.suspensos++;
+        return v;
+    }
+},3);
+console.log(jsonCorregido);
+console.log("Alumnos aprobados --> " + estadisticas.aprobados +" Alumnos suspensos --> " + estadisticas.suspensos);
