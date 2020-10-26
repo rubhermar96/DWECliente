@@ -14,8 +14,13 @@
         document.links[document.links.length-1].href = temp;
     }
     function infoImagen(){
-        for(i=0;i<document.length;i++){
-            
+        for(i=0;i<document.images.length;i++){
+            c= "Fichero: "+document.images[i].src;
+            c+= "\nAltura: "+document.images[i].height;
+            c+= "\nanchura: "+document.images[i].width;
+            c+= "\nborde: "+document.images[i].border;
+            c+= "\nnombre: "+document.images[i].name;
+            window.alert(c);
         }
     }
 </script>
