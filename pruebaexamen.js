@@ -124,10 +124,10 @@ var objPreguntas = JSON.parse(jsonPreguntas, function(k, v){
     }
 });
 
-function corregir(_plantilla,_respuestas){
+function corregir(plantilla,respuestas){
     var puntos =0;
-    _respuestas.forEach((x) => {
-        x.respuesta==_plantilla[x.codigo] ? puntos++ : puntos=puntos;
+    respuestas.forEach((x) => {
+        x.respuesta==plantilla[x.codigo] ? puntos++ : puntos=puntos;
     });
     return puntos;
 }
