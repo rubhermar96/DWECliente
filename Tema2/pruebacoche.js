@@ -25,7 +25,7 @@ var carrera = [];
 
 carrera.push(new Coche("c1",119,70));
 carrera.push(new Coche("c2",140,70));
-carrera.push(new Coche("c3",120,70));
+carrera.push(new Coche("c3",150,70));
 carrera.push(new Coche("c4",130,70));
 carrera.push(new Coche("c5",150,70));
 
