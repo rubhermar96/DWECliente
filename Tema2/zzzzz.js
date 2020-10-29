@@ -37,3 +37,22 @@ console.log(persona);
 persona.hijos.forEach(x => {
     console.log("edad de los hijos --> "+x.edad);
 });
+
+function objAlumno(nombre,curso,año){
+    this.nombre=nombre;
+    this.curso=curso;
+    this.año=año;
+    this.modulos=[{
+        nombre:"matematicas",
+        nota:0,
+        curso:1,
+        horas:8
+        },
+        {
+        nombre:"lengua",
+        nota:0,
+        curso:1,
+        horas:5
+        }    
+    ];
+}
