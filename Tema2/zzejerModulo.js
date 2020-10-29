@@ -45,6 +45,8 @@ var alumnos = [];
 alumnos.push(new Estudiante("Lucia", 1, 2018));
 alumnos.push(new Estudiante("Paco",2,2019));
 
-while (alumnos.every(y => y.notas < 5 && y.curso<2)){
+while (alumnos.every(y => y.curso<2)){
     alumnos.forEach(x => {x.examinar();});
 }
+
+alumnos.forEach(x => console.log(x.nombre+" --> "+x.nota+" --> "+x.curso));
