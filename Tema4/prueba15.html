@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+    function abrirEnlace(){
+        var enlaces = ["https://www.google.es/","https://materializecss.com/getting-started.html","https://www.educa.jcyl.es/es","https://marca.es"];
+        for(i=0;i<enlaces.length;i++){
+            setInterval(window.open(enlaces[i],"_blank","toolbar=yes,location=no,height=400,width=200",true),5000);
+        }
+
+    }
+</script>
+<body onload="abrirEnlace();">
+    <h1>Abrir enlace automáticamente</h1>
+</body>
+</html>
