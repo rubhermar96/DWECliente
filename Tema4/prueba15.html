@@ -6,15 +6,26 @@
     <title>Document</title>
 </head>
 <script type="text/javascript">
-    function abrirEnlace(){
-        var enlaces = ["https://www.google.es/","https://materializecss.com/getting-started.html","https://www.educa.jcyl.es/es","https://marca.es"];
-        for(i=0;i<enlaces.length;i++){
-            setInterval(window.open(enlaces[i],"_blank","toolbar=yes,location=no,height=400,width=200",true),5000);
-        }
-
+    function abrirGoogle(){
+        window.open("https://www.google.es/","","toolbar=yes,location=no,height=1000,width=1000",true);
+    }
+    function abrirMaterialize(){
+        window.open("https://materializecss.com/getting-started.html","","toolbar=yes,location=no,height=1000,width=1000",true);
+    }
+    function abrirEduca(){
+        window.open("https://www.educa.jcyl.es/es","","toolbar=yes,location=no,height=1000,width=1000",true);
+    }
+    function abrirMarca(){
+        window.open("https://marca.com","","toolbar=yes,location=no,height=1000,width=1000",true);
+    }
+    function iniciar(){
+        setInterval(abrirGoogle,5000);
+        setInterval(abrirMaterialize,5000);
+        setInterval(abrirEduca,5000);
+        setInterval(abrirMarca,5000);
     }
 </script>
-<body onload="abrirEnlace();">
+<body onload="iniciar();">
     <h1>Abrir enlace automáticamente</h1>
 </body>
 </html>
