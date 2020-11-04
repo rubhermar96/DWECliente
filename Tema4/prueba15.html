@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script type="text/javascript">
-    function abrirGoogle(){
-        window.open("https://www.google.es/","","toolbar=yes,location=no,height=1000,width=1000",true);
-    }
-    function abrirMaterialize(){
-        window.open("https://materializecss.com/getting-started.html","","toolbar=yes,location=no,height=1000,width=1000",true);
-    }
-    function abrirEduca(){
-        window.open("https://www.educa.jcyl.es/es","","toolbar=yes,location=no,height=1000,width=1000",true);
-    }
-    function abrirMarca(){
-        window.open("https://marca.com","","toolbar=yes,location=no,height=1000,width=1000",true);
-    }
-    function iniciar(){
-        setInterval(abrirGoogle,5000);
-        setInterval(abrirMaterialize,5000);
-        setInterval(abrirEduca,5000);
-        setInterval(abrirMarca,5000);
-    }
-</script>
 <body onload="iniciar();">
     <h1>Abrir enlace automáticamente</h1>
+    <a href="https://www.google.es/">Enlace 1</a>
+    <a href="https://materializecss.com/getting-started.html">Enlace 2</a>
+    <a href="https://www.educa.jcyl.es/es">Enlace 3</a>
+    <a href="https://marca.com">Enlace 4</a>
+
+    <script type="text/javascript">
+        var i=0; ventana, intervalo;
+        function iniciar(){
+            if(document.links.length>0){
+                intervalo = setInterval(cargarPagina,5000);
+            }
+        }
+        function cargarPagina(){
+            if(i==0){
+                ventana = window.open("","_blank","height=1000,width=1000",true);
+            }
+            if(i<document.links.length){
+                ventana.location.href = document.links[i++].href;
+            }else if(i==document.links.length){
+                clearInterval(intervalo);
+            }
+        }
+    </script>
 </body>
 </html>
