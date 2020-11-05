@@ -28,15 +28,15 @@
     <hr>
     <p id="modificado">Parrafo modificable</p>
 
-    <button onclick="document.getElementById('modificado').className='';">Quitar clases</button>
 
     <script type="text/javascript">
         function añadirEstilo(clase){
-            var nodoMod = document.getElementById("modificado");
-            var modificar = clase.classList.value;
-
-            nodoMod.classList.add(modificar);
-
+            var nodoMod = document.getElementById('modificado');
+            if(nodoMod.classList.contains(clase.className)){
+                nodoMod.classList.remove(clase.className);
+            }else{
+                nodoMod.classList.add(clase.className);
+            }
         }
     </script>
 </body>
