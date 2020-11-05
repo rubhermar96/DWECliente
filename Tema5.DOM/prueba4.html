@@ -30,7 +30,11 @@
 
     <script type="text/javascript">
         function añadirEstilo(clase){
-            
+            var nodoMod = document.getElementById("modificado");
+            var modificar = clase.classList.value;
+
+            nodoMod.classList.add(modificar);
+
         }
     </script>
 </body>
