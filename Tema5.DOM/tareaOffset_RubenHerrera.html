@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #offsetHeight{
+            height: 200px;
+            width: 300px;
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            left: 10%;
+        }
+        #offsetWidth{
+            height: 200px;
+            width: 300px;
+            border: 5px solid black;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            left: 10%;
+        }
+        #offsetLeft{
+            height: 200px;
+            width: 300px;
+            border: 2px solid black;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            top: 30px;
+            left: 20px;
+        }
+        #offsetTop{
+            height: 200px;
+            width: 300px;
+            border: 2px solid black;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            top: 30px;
+            left: 20px;
+        }
+        #offsetParent{
+            height: 200px;
+            width: 300px;
+            border: 2px solid black;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            top: 30px;
+            left: 20px;
+        }
+        .contenedor{
+            height: 300px;
+            width: 400px;
+            border: 5px solid black;
+            padding: 15px;
+            position: relative;
+            left: 7%;
+        }
+        .titulo{
+            font-size: 26px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos OffsetHeight, OffsetWidth, OffsetLeft, OffsetRight y OffsetParent</h1>
+    <hr>
+    <!--Ejemplo OffsetHeight-->
+    <div id="offsetHeight">
+        <span class="titulo">OffsetHeight</span><br><br>
+        <span>offsetHight = height+padding+border</span><br> <!--En el padding y border hay que tener en cuenta de que existe un padding y border tanto superior como inferior por lo que si el padding = 15px habría que sumar 15px de padding superior y 15px de padding inferior-->
+        <span>height: 200px;
+            border: 1px;
+            padding: 15px;</span><br>
+        <button onclick="mostrarHeight()">Mostrar</button><br><br>
+        <span id="infoHeight"></span>
+    </div>
+    <hr>
+    <!--Ejemplo OffsetWidth-->
+    <div id="offsetWidth">
+        <span class="titulo">OffsetWidth</span><br><br>
+        <span>offsetWidth = width+padding+border</span><br>
+        <span>width: 300px;
+            border: 5px;
+            padding: 15px;</span><br>
+        <button onclick="mostrarWidth()">Mostrar</button><br><br>
+        <span id="infoWidth"></span>
+    </div>
+    <hr>
+    <!--Ejemplo OffsetLeft-->
+    <div class="contenedor">
+        <div id="offsetLeft">
+            <span class="titulo">OffsetLeft</span><br><br>
+            <span>offsetLeft = left + margin + padding(elemento padre)</span><br>
+            <span>left:20px;padding(elemento padre):15px;</span><br>
+            <button onclick="mostrarLeft()">Mostrar</button><br><br>
+            <span id="infoLeft"></span>
+        </div>
+    </div>
+    <hr>
+    <!--Ejemplo OffsetTop-->
+    <div class="contenedor">
+        <div id="offsetTop">
+            <span class="titulo">OffsetTop</span><br><br>
+            <span>offsetTop = top + margin + padding(elemento padre) </span><br>
+            <span>top:30px;padding(elemento padre):15px;</span><br>
+            <button onclick="mostrarTop()">Mostrar</button><br><br>
+            <span id="infoTop"></span>
+        </div>
+    </div>
+    <hr>
+    <!--Ejemplo OffsetParent-->
+    <div class="contenedor">
+        <div id="offsetParent">
+            <span class="titulo">OffsetParent</span><br><br>
+            <span>Muestra el elemento padre de un elemento</span><br>
+            <button onclick="mostrarParent()">Mostrar</button><br><br>
+            <span id="infoParent"></span>
+        </div>
+    </div>
+    <!--JavaScript-->
+    <script type="text/javascript">
+    function mostrarHeight(){
+        var divHeight= document.getElementById("offsetHeight");
+        var txt = "Altura del elemento div incluyendo padding y border: " + divHeight.offsetHeight + "px";
+        document.getElementById("infoHeight").innerHTML=txt;
+    }
+    function mostrarWidth(){
+        var divWidth= document.getElementById("offsetWidth");
+        var txt = "Anchura del elemento div incluyendo padding y border: " + divWidth.offsetWidth + "px";
+        document.getElementById("infoWidth").innerHTML=txt;
+    }
+    function mostrarLeft(){
+        var divLeft= document.getElementById("offsetLeft");
+        var txt = "Posicion desde la izquierda incluyendo padding(del elemento padre) y margin " + divLeft.offsetLeft + "px";
+        document.getElementById("infoLeft").innerHTML=txt;
+    }
+    function mostrarTop(){
+        var divTop= document.getElementById("offsetTop");
+        var txt = "Posicion desde arriba incluyendo padding(del elemento padre) y margin " + divTop.offsetTop + "px";
+        document.getElementById("infoTop").innerHTML=txt;
+    }
+    function mostrarParent(){
+        var divParent= document.getElementById("offsetParent");
+        document.getElementById("infoParent").innerHTML=divParent.offsetParent;
+    }
+    </script>
+</body>
+</html>
