@@ -1,0 +1,31 @@
+++ejercicio introducir una cadena y comprobar de que se trata (DNI, matricula, telefono, codigo postal, cuenta bancaria, dirección ip)
+
+++ejercicio a través de una cadena ordenar los campos (nombre, dni, telefono, codigo postal, matricula) de un archivo csv(máx 5 personas).
+var dato ="_,_,_,_,_,_,_,_,_,_";
+arrayD = dato.split(",");
+
+
+
+++ejercicio escribir un párrafo en una variable y contar cuantas palabras hay de 1 letra, de 2, de 3, de 4, y de más de 5.
+
+++ejercicio crear expresion regular para contraseña (mayúsculas, minúsculas, no espacios, que tenga 1 dígito o +, carácteres especiales, longitud entre 4 y 12, y no debe contener 3 o más carácteres que concuerden con el login)
+
+++Obtener el día de la semana de mis siguientes 5 cumpleaños.
+
+++Hacer un calendario con los festivos
+
+++Calcular el tiempo transcurrido entre 2 fechas
+
+++Simular nuestro paso por el ies en cuanto a expediente académico (2 convocatorias por año (4 convocatorias) se hará un examen(la nota será un número aleatorio) por cada modulo(asignatura) **se acaba cuando todos se hayan sacado el titulo**
+
+++Cambiar el año de una fecha dependiendo si el dia es par(suma) o impar(resta) parseando
+
+var personasCadena= '[\{"nombre":"pepe","fechanac":"1980-04-07},\
+
+++17tema4--> cambiar imagenes simulando gif animado
+
+++hacer un ejercicio con ejemplos de offsetHeight, offsetWidth, offsetLeft, offsetParent, offsetTop.
+
+++Serie de parrafos al dar click los desordena de forma aleatoria
+++A partir de una página con varios párrafos se pide vaciar todos menos el primero y que el primero contenga el texto de todos separados por un salto de línea
+++A partir de una página co varios párrafos se pide hacer click con el ratón en uno de llos y que contenga el texto de todos los parrafos separados por un salto de línea
