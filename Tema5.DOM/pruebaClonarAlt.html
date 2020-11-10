@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clonar párrafos alternando arriba y abajo</h1>
+    <hr>
+    <p onclick="clonar(this)">Primer Párrafo</p>
+    <p onclick="clonar(this)">Segundo Párrafo</p>
+    <p onclick="clonar(this)">Tercer Párrafo</p>
+</body>
+</html>
+<script type="text/javascript">
+    var principio = true;
+        function clonar(parrafo){
+            nodoBody = document.childNodes[0].childNodes[1];
+            var nodoClonado = parrafo.cloneNode(true);
+
+            var listasParrafos = document.getElementsByTagName("p");
+            if(principio){
+                nodoBody.insertBefore(nodoClonado,listasParrafos[0]);
+            }else{
+                nodoBody.appendChild(nodoClonado);
+            }
+            principio=!principio;
+        }
+    </script>

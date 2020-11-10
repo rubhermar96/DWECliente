@@ -27,5 +27,9 @@ var personasCadena= '[\{"nombre":"pepe","fechanac":"1980-04-07},\
 ++hacer un ejercicio con ejemplos de offsetHeight, offsetWidth, offsetLeft, offsetParent, offsetTop.
 
 ++Serie de parrafos al dar click los desordena de forma aleatoria
+
 ++A partir de una página con varios párrafos se pide vaciar todos menos el primero y que el primero contenga el texto de todos separados por un salto de línea
+
 ++A partir de una página co varios párrafos se pide hacer click con el ratón en uno de llos y que contenga el texto de todos los parrafos separados por un salto de línea
+
+++Hacer clic sobre un párrafo y clonarlo para insertarlo alternativamente al principio y al final de los párrafos.
