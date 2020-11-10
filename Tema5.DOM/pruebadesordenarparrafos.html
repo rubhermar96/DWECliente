@@ -23,7 +23,16 @@
 
     <script type="text/javascript">
         function desordenar(){
-            
+            var aleatorio=[0,1,2,3,4,5,6,7,8,9];
+            var memoria=[];
+            var parrafos=document.getElementsByTagName('p');
+            for(i=0;i<parrafos.length;i++){
+                memoria[i]=parrafos[i].textContent;
+            }
+            var aleatorio=aleatorio.sort(function(){return Math.random()-0.5});
+            for(i=0;i<parrafos.length;i++){
+                document.getElementsByTagName('p').item(i).innerHTML = memoria[aleatorio[i]];
+            }
         }
     </script>
 </body>
