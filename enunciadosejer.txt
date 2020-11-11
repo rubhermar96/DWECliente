@@ -33,3 +33,13 @@ var personasCadena= '[\{"nombre":"pepe","fechanac":"1980-04-07},\
 ++A partir de una página co varios párrafos se pide hacer click con el ratón en uno de llos y que contenga el texto de todos los parrafos separados por un salto de línea
 
 ++Hacer clic sobre un párrafo y clonarlo para insertarlo alternativamente al principio y al final de los párrafos.
+
+++Hacer clic sobre una tabla y decir el número de celdas vacías que tiene
+
+++Eliminar los párrafos al hacer click
+
++Mostrar un párrafo y dos botones para aumentar y disminuir el texto
+
+++Hacer una serie de párrafos que muestren de uno en uno un número en un determinado tiempo en segundos
+
+++Girar, al hacer click, las filas en una tabla y las columnas en otras

@@ -13,19 +13,26 @@
 <body>
     <h1>Al hacer click sobre un parrafo vaciar los demás añadiendo su texto en el parrafo clickado</h1>
     <hr>
-    <p id="p1" onclick="vaciar(this)">Primer Párrafo</p>
-    <p id="p2" onclick="vaciar(this)">Segundo Párrafo</p>
-    <p id="p3" onclick="vaciar(this)">Tercer Párrafo</p>
-    <p id="p4" onclick="vaciar(this)">Cuarto Párrafo</p>
-    <p id="p5" onclick="vaciar(this)">Quinto Párrafo</p>
+    <p id="p1" onclick="vaciar(this);">Primer Párrafo</p>
+    <p id="p2" onclick="vaciar(this);">Segundo Párrafo</p>
+    <p id="p3" onclick="vaciar(this);">Tercer Párrafo</p>
+    <p id="p4" onclick="vaciar(this);">Cuarto Párrafo</p>
+    <p id="p5" onclick="vaciar(this);">Quinto Párrafo</p>
 
     <script type="text/javascript">
         function vaciar(parrafo){
-            var nodeP = document.getElementsByTagName("p");
-            for(i=0;i<nodeP.length;i++){
-                if(nodeP[i].textContent.contains(parrafo.textContent)) {
-					nodeP[i].textContent.remove(parrafo.textContent);
-				}
+            var textoParrafo = parrafo.textContent;
+            parrafo.textContent="";
+
+            var listaParrafos = document.getElementsByTagName("p");
+
+            for(i=0; i<listaParrafos.length;i++){
+                if(parrafo.textContent != ""){
+                    parrafo.innerHTML += "<br>";
+                }
+                if(listaParrafos[i]){
+                    
+                }
             }
         }
     </script>
