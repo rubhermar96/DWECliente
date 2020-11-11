@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:hover{
+            border: solid 2px red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vaciar parrafos menos el primero y que aparezan en este último con un salto de línea</h1>
+    <hr>
+    <p id="p1">Primer Párrafo</p>
+    <p>Segundo Párrafo</p>
+    <p>Tercer Párrafo</p>
+    <p>Cuarto Párrafo</p>
+    <p>Quinto Párrafo</p>
+    <button onclick="vaciar()">Eliminar</button>
+
+    <script type="text/javascript">
+        function vaciar(){
+            var parrafos = document.getElementsByTagName("p");
+            var eliminados=[];
+            for(i=1;i<parrafos.length;i++){
+                eliminados[i]=parrafos[i];
+            }
+            for(j=1; j<eliminados.length;j++){
+               document.getElementById("p1").innerHTML += "<br>"+eliminados[j].textContent;
+            }
+            for(z=1; z<eliminados.length;z++){
+                eliminados[z].remove();
+            }
+        }
+    </script>
+</body>
+</html>
