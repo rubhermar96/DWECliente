@@ -34,12 +34,22 @@ var personasCadena= '[\{"nombre":"pepe","fechanac":"1980-04-07},\
 
 ++Hacer clic sobre un párrafo y clonarlo para insertarlo alternativamente al principio y al final de los párrafos.
 
-++Hacer clic sobre una tabla y decir el número de celdas vacías que tiene
+37++Hacer clic sobre una tabla y decir el número de celdas vacías que tiene
 
-++Eliminar los párrafos al hacer click
+38++Eliminar los párrafos al hacer click
 
-+Mostrar un párrafo y dos botones para aumentar y disminuir el texto
+39+Mostrar un párrafo y dos botones para aumentar y disminuir el texto
 
-++Hacer una serie de párrafos que muestren de uno en uno un número en un determinado tiempo en segundos
+40++Hacer una serie de párrafos que muestren de uno en uno un número en un determinado tiempo en segundos
 
-++Girar, al hacer click, las filas en una tabla y las columnas en otras
+41++Girar, al hacer click, las filas en una tabla y las columnas en otras
+
+60++Intercambiar los atributos de dos parrafos y de dos imágenes
+
+61++Contar el número de atributos que hay en un documento y sacar sus nombres y valores
+
+62++Quitar y poner alternativamente los atributos a un elemento concreto de la página al hacer click ese elemento
+
+63++Quitar la jerarquía a un documento, es decir, todos los elementos del body deben ser hijos de éste.
+
+64++ meter todos los elementos en divs

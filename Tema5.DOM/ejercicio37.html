@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,th,td{
+            border: solid 2px black;
+            text-align: center;
+        }
+        table{
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hacer clic sobre una tabla y decir el número de celdas vacías que tiene</h1>
+    <hr>
+    <table onclick="contarVacias(this)">
+        <tr><td>A</td><td></td><td>A</td><td>A</td></tr>
+        <tr><td></td><td>A</td><td></td><td></td></tr>
+        <tr><td>A</td><td></td><td></td><td>A</td></tr>
+        <tr><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+    </table>
+    <table onclick="contarVacias(this)">
+        <tr><td>A</td><td></td><td>A</td><td>A</td></tr>
+        <tr><td></td><td>A</td><td>A</td><td>A</td></tr>
+        <tr><td>A</td><td></td><td></td><td>A</td></tr>
+        <tr><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+    </table>
+    <script>
+        function contarVacias(tabla){
+            var nodeTD = tabla.getElementsByTagName("td");
+            var cont=0;
+            for(i=0;i<nodeTD.length;i++){
+                if(nodeTD[i].textContent==""){
+                    cont++;
+                }
+            }
+            alert("Celdas vacías: "+cont);
+        }
+    </script>
+</body>
+</html>

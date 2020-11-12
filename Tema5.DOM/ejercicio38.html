@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eliminar los párrafos al hacer click</h1>
+    <hr>
+    <p onclick="eliminar(this)">Parrafo Primero</p>
+    <p onclick="eliminar(this)">Parrafo Segundo</p>
+    <p onclick="eliminar(this)">Parrafo Tercero</p>
+    <p onclick="eliminar(this)">Parrafo Cuarto</p>
+    <p onclick="eliminar(this)">Parrafo Quinto</p>
+    <p onclick="eliminar(this)">Parrafo Sexto</p>
+    <p onclick="eliminar(this)">Parrafo Septimo</p>
+    <p onclick="eliminar(this)">Parrafo Octavo</p>
+
+    <script>
+        function eliminar(parrafo){
+            parrafo.remove();
+        }
+    </script>
+</body>
+</html>

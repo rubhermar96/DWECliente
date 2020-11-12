@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="iniciar()">
+    <h1>Hacer una serie de párrafos que muestren de uno en uno un número en un determinado tiempo en segundos</h1>
+    <hr>
+    <p id="p1"></p>
+
+    <div style="visibility: hidden;">
+        <span>Uno</span>
+        <span>Dos</span>
+        <span>Tres</span>
+        <span>Cuatro</span>
+        <span>Cinco</span>
+        <span>Seis</span>
+    </div>
+
+    <script>
+        var intervalo, i=0;
+        var parrafos = document.getElementsByTagName("span");
+        function iniciar(){
+            intervalo = setInterval(rotarNumero,5000);
+        }
+        function rotarNumero(){
+            if(i<parrafos.length){
+                document.getElementsById("p1").innerHTML = parrafos[i].textContent;
+            }else if(i==parrafos.length){
+                i = 0;
+            }
+        }
+    </script>
+</body>
+</html>
