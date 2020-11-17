@@ -1,0 +1,17 @@
+--Crear un Rama -> Create Branch, para subirla a github click en la nube
+
+--Mezclar Ramas --> git merge (para traer cambios de una rama a otra)
+
+-- .gitignore (fichero para indicar que ficheros no hay que subir al servidor)
+
+--ssh git bash --> ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
+
+--comprobar --> ls -al ~/.ssh
+
+--evaluar servidor --> eval $(ssh-agent -s)
+
+--Agregar llave a Git --> ssh-add ~/.ssh/id_rsa
+
+
+
+--Configuracion usuarios apache tema2.2
