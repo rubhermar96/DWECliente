@@ -53,3 +53,7 @@ var personasCadena= '[\{"nombre":"pepe","fechanac":"1980-04-07},\
 63++Quitar la jerarquía a un documento, es decir, todos los elementos del body deben ser hijos de éste.
 
 64++ meter todos los elementos en divs
+
+tema 6
+
+3++ Crear un formulario a partir de un JSON.
