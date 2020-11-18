@@ -9,7 +9,7 @@
 		<hr />
 
 		Formulario<br />
-		<form id="formulario"></form>
+		<form id="formulario"></form><br>
 		
 		<button onclick="crearFormulario()">Crear formulario</button><br />
 		
@@ -22,20 +22,35 @@
 	{"id":"modulo","name":"modulo","type":"radio","opciones":[\
 	{"value":"servidor","texto":"Prog.Servidor"},\
 	{"value":"cliente","texto":"Prog.Cliente"},\
-	{"value":"diseño","texto":"Diseño"},\
-	]},\
+	{"value":"diseño","texto":"Diseño"}]},\
 	{"id":"descripcion","name":"descripcion","type":"textarea","placeholder":"Escribe la descripción"},\
 	{"id":"nacionalidades","name":"nacionalidades","type":"select","opciones":[\
 	{"value":"es","texto":"Española"},\
 	{"value":"fr","texto":"Francesa"},\
 	{"value":"de","texto":"Alemana"},\
 	{"value":"pt","texto":"Portuguesa"},\
-	{"value":"uk","texto":"Británica"},\
-	]},\
+	{"value":"uk","texto":"Británica"}]}\
     ]}';
 
 			function crearFormulario() {
+				var listaCampos = JSON.parse(datos);
+				var formulario = document.getElementById("formulario");
+	
+				listaCampos.forEach(x => {
+					if(x.type == "text" || x.type == "password" || x.type == "checked" || x.type == "textarea"){
+						var elemento = document.createElement("input");
+						elemento.appendChild(formulario);
+						for(var z in x){
+							elemento.setAttribute(z,x[z]);
+						}
+					}
+					if(x.type == "radio"){
+						
+					}
+					if(x.type == "select"){
 
+					}
+				});
 			}
 
 		</script>
