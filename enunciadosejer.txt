@@ -57,3 +57,17 @@ var personasCadena= '[\{"nombre":"pepe","fechanac":"1980-04-07},\
 tema 6
 
 3++ Crear un formulario a partir de un JSON.
+
+7++ Crear un formulario de un JSON
+
+12++ Ejercicio para que no coincidan dos elecciones de un campo select
+
+13++ Visualizador de codigo html (innerHtml)
+
+15++ Validar un formulario sin javascript (pattern)
+
+16++ Editar una selección de opciones
+
+17++ No admitir números en una caja de texto
+
+18++ Juego del ahorcado

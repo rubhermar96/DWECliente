@@ -1,4 +1,4 @@
-//lenguaje_81.js - Objeto Math
+//lenguaje_80.js - Objeto Math
 
 //CONSTANTES
 console.log("CONSTANTES");

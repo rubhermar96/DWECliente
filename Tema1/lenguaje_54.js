@@ -1,4 +1,4 @@
-//Lenguaje_53.js - Ejercicio: Invocar un único método llamado calcular para realizar las 4 operaciones aritméticas básica (+,-,*,/)
+//Lenguaje_54.js - Ejercicio: Invocar un único método llamado calcular para realizar las 4 operaciones aritméticas básica (+,-,*,/)
 
 var operacion="+";
 var calcular;

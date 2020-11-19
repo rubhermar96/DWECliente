@@ -1,4 +1,4 @@
-//Lenguaje_53.js - Ejercicio: Calcular los 100 primeros números de la secuencia de Fibonacci
+//Lenguaje_52.js - Ejercicio: Calcular los 100 primeros números de la secuencia de Fibonacci
 
 
 function fibonacci(n) {

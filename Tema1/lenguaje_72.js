@@ -33,4 +33,4 @@ arrayDatosInicial.forEach(function (x,y) {
 	}
 });
 
-console.log(arrayDatosFinal);
+console.table(arrayDatosFinal);
