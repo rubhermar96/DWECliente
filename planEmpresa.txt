@@ -1,0 +1,40 @@
+Marca --> TORNON
+Logotipo
+Eslogan -->
+
+Fase vida del producto --> introducción
+
+producto básico --> participar en torneos
+
+producto formal --> una plataforma en la que inscribirte a torneos de otros usuarios o crear los tuyos propios.
+
+producto ampliado --> servicio adicional para administrar los torneos
+
+precios:
+paquete básico --> es gratuito, y el cliente podrá inscribirse a los torneos
+crear un torneo --> 2€ por cada torneo que cree el usuario
+paquete intermedio --> 4€ mensuales, no aparece publicidad en la web e incluye 2 torneos activos.
+paquete premium --> 10€ mensuales con el que los torneos creados serán administrados por nosotros.
+
+Canal de distribución --> del productor al consumidor
+
+Promoción y publicidad
+
+Medios Pagados
+Incluir publicidad en otras webs a través de banners.
+Publicidad en las redes sociales.
+Pagar a personalidades del sector de los videojuegos para que publiciten nuestro servicio
+
+Medios Propios
+Redes sociales
+Mailing
+
+Plan atencion al cliente
+
+Formulario en la web en el que al rellenarlo y enviarlo nos llegará una notificación con la incidencia.
+También pondremos a disposición de los usuarios un número telefónico y un correo electrónico.
+
+
+
+
+
