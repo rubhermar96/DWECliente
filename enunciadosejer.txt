@@ -71,6 +71,9 @@ tema 6
 17++ No admitir números en una caja de texto
 
 18++ Juego del ahorcado
+cuadro jugador1
+cuadropalabra
+
 
 tema 7
 

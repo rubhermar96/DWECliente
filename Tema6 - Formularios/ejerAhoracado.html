@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Ahorcado</title>
+    <style>
+        #jugador1{
+            width: 800px;
+            padding: 10px;
+            border: solid 2px black;
+        }
+        #jugador2{
+            width: 800px;
+            padding: 10px;
+            border: solid 2px black;
+        }
+        select{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego del Ahorcado</h1>
+    <hr>
+    <div id="jugador1">
+        <h1>Jugador 1</h1><br>
+        <form action="">
+            <h3>Introduce una palabra</h3>
+            <input type="password" name="palabra" id="palabra" placeholder="Introduce la palabra">
+            <button id="empezar">Empezar</button>
+            <div id="historial">
+
+            </div>
+            <div id="cuadropalabra">
+
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div id="jugador2">
+        <h1>Jugador2</h1><br>
+        <h3>Selecciona una letra</h3>
+        <select name="letras" id="letras">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+            <option>G</option>
+            <option>H</option>
+            <option>I</option>
+            <option>J</option>
+            <option>K</option>
+            <option>L</option>
+            <option>M</option>
+            <option>N</option>
+            <option>Ñ</option>
+            <option>O</option>
+            <option>P</option>
+            <option>Q</option>
+            <option>R</option>
+            <option>S</option>
+            <option>T</option>
+            <option>U</option>
+            <option>V</option>
+            <option>W</option>
+            <option>X</option>
+            <option>Y</option>
+            <option>Z</option>
+        </select>
+        <button id="btncomprobar">Enviar</button><br><br>
+        <input type="text" id="comprobarPalabra" placeholder="Comprobar Palabra">
+        <button id="btnComprobarPalabra">Comprobar Palabra</button>
+    </div>
+</body>
+</html>
