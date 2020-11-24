@@ -62,7 +62,7 @@ tema 6
 
 12++ Ejercicio para que no coincidan dos elecciones de un campo select
 
-13++ Visualizador de codigo html (innerHtml)
+13++ Visualizador de codigo html (innerHtml)(como el de w3School)
 
 15++ Validar un formulario sin javascript (pattern)
 
@@ -71,3 +71,7 @@ tema 6
 17++ No admitir números en una caja de texto
 
 18++ Juego del ahorcado
+
+tema 7
+
+7++ Hacer click sobre una celda y que te devulva las coordenadas

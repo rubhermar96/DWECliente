@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 15. Validar un formulario sin Javascript</h1>
+    <hr>
+    <form>
+        <input type="text" name="telefono" placeholder="telefono" pattern="^[6-9][0-9]{8}$"><br><br>
+        <input type="text" name="dni" placeholder="DNI" pattern="^\d{8}[A-Z]$"><br><br>
+        <input type="text" name="matricula" placeholder="Matricula" pattern="^[0-9]{4}[B-D,F-H,J-N,P-T,V-Z]{3}$"><br><br>
+        <input type="text" name="codigopostal" placeholder="Codigo Postal" pattern="^[0-9]{5}$"><br><br>
+        <button type="submit">Validar</button>
+    </form>
+</body>
+</html>

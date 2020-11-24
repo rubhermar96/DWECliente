@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border: solid 2px black;
+        }
+        td{
+            height: 40px;
+            width: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 7. Hacer click sobre una celda y que devuelva las coordenadas</h1>
+    <hr>
+    <table>
+        <tbody>
+            <tr><td>A</td><td>B</td><td>C</td></tr>
+            <tr><td>D</td><td>E</td><td>F</td></tr>
+            <tr><td>G</td><td>H</td><td>I</td></tr>
+            <tr><td>J</td><td>K</td><td>L</td></tr>
+            <tr><td>M</td><td>N</td><td>O</td></tr>
+            <tr><td>P</td><td>Q</td><td>R</td></tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        var celdas = document.getElementsByTagName("td");
+
+        for(i=0;i<celdas.length;i++){
+            celdas[i].addEventListener("click", function (e){
+                var columna = 0, fila = 0;
+
+                var nodoTbody = this.parentNode.parentNode;
+                for(fil=0;fil<nodoTbody.children.length;fil++){
+                    for(col=0;col<nodoTbody.children[fil].children.length;col++){
+                        if(this === nodoTbody.children[fil].children[col]){
+                            fila = fil + 1;
+                            columna = col + 1;
+                        }
+                    }
+                }
+                alert("Fila: "+fila+"---- Columna: "+columna);
+            })
+        }
+    </script>
+</body>
+</html>
