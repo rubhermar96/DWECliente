@@ -9,14 +9,37 @@
             width: 800px;
             padding: 10px;
             border: solid 2px black;
+            display: block;
         }
         #jugador2{
             width: 800px;
             padding: 10px;
             border: solid 2px black;
+            display: none;
         }
         select{
             width: 50px;
+        }
+        #contador{
+            border-top: red 1px solid;
+            border-bottom: solid 1px red;
+            padding: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+        #historial{
+            border-top: green 1px solid;
+            border-bottom: solid 1px green;
+            padding: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+        #cuadropalabra{
+            border-top: black 1px solid;
+            border-bottom: solid 1px black;
+            padding: 10px;
+            margin-top: 10px;
+            display: none;
         }
     </style>
 </head>
@@ -25,17 +48,20 @@
     <hr>
     <div id="jugador1">
         <h1>Jugador 1</h1><br>
-        <form action="">
-            <h3>Introduce una palabra</h3>
-            <input type="password" name="palabra" id="palabra" placeholder="Introduce la palabra">
-            <button id="empezar">Empezar</button>
-            <div id="historial">
+        <div id="form1">
+                <h3>Introduce una palabra</h3>
+                <input type="password" name="palabra" id="palabra" placeholder="Introduce la palabra">
+                <button id="empezar" onclick="start();">Empezar</button>
+        </div>
+        <div id="contador">
 
-            </div>
-            <div id="cuadropalabra">
+        </div>
+        <div id="historial">
 
-            </div>
-        </form>
+        </div>
+        <div id="cuadropalabra">
+
+        </div>
     </div>
     <hr>
     <div id="jugador2">
@@ -71,8 +97,23 @@
             <option>Z</option>
         </select>
         <button id="btncomprobar">Enviar</button><br><br>
-        <input type="text" id="comprobarPalabra" placeholder="Comprobar Palabra">
+        <input type="text" id="comprobarPalabra" placeholder="Comprobar Palabra" disabled>
         <button id="btnComprobarPalabra">Comprobar Palabra</button>
     </div>
+    <script type="text/javascript">
+        function start(){
+            document.getElementById("form1").style.display="none";
+            document.getElementById("jugador2").style.display="block";
+            document.getElementById("contador").style.display="block";
+            document.getElementById("historial").style.display="block";
+            document.getElementById("cuadropalabra").style.display="block";
+        }
+        var palabraj1 = document.getElementById("palabra").textContent.toUpperCase().split('');
+
+        var cuadrop = document.getElementById("cuadropalabra");
+        for(i=0; i<palabraj1.length;i++){
+            
+        }
+    </script>
 </body>
 </html>
