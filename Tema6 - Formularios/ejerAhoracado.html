@@ -50,7 +50,7 @@
         <h1>Jugador 1</h1><br>
         <div id="form1">
                 <h3>Introduce una palabra</h3>
-                <input type="password" name="palabra" id="palabra" placeholder="Introduce la palabra">
+                <input type="password" name="palabra" id="palabra1" placeholder="Introduce la palabra">
                 <button id="empezar" onclick="start();">Empezar</button>
         </div>
         <div id="contador">
@@ -96,24 +96,51 @@
             <option>Y</option>
             <option>Z</option>
         </select>
-        <button id="btncomprobar">Enviar</button><br><br>
+        <button id="btncomprobar" onclick="sendLetter();">Enviar</button><br><br>
         <input type="text" id="comprobarPalabra" placeholder="Comprobar Palabra" disabled>
         <button id="btnComprobarPalabra">Comprobar Palabra</button>
     </div>
     <script type="text/javascript">
+    var palabraj1, palabraGuiones, intentos=0, letraSelect;
+    var arrayPal = [];
+    var cuadrop = document.getElementById("cuadropalabra");
+    var divContador= document.getElementById("contador");
+    var divHistorial = document.getElementById("historial");
         function start(){
             document.getElementById("form1").style.display="none";
             document.getElementById("jugador2").style.display="block";
             document.getElementById("contador").style.display="block";
             document.getElementById("historial").style.display="block";
             document.getElementById("cuadropalabra").style.display="block";
-        }
-        var palabraj1 = document.getElementById("palabra").textContent.toUpperCase().split('');
 
-        var cuadrop = document.getElementById("cuadropalabra");
-        for(i=0; i<palabraj1.length;i++){
-            
+            palabraj1 = document.getElementById("palabra1").value.toUpperCase();
+
+            palabraGuiones = palabraj1.replace(/./g,"_ ");
+            cuadrop.innerHTML=palabraGuiones;
+            divContador.innerHTML = intentos;
+            arrayPal=palabraj1.split("");
         }
+
+        function sendLetter(){
+            var sel = document.getElementById("letras");
+            letraSelect= sel.options[sel.selectedIndex].text;
+
+            for(var i=0; i<arrayPal.length;i++){
+                if(i<1){
+                    if(arrayPal[i]==letraSelect){
+                        palabraGuiones= palabraj1.replace(/letraSelect/g,"_ ");
+                        alert(palabraGuiones);
+                    }
+                }else{
+                    if(arrayPal[i]==letraSelect){
+                        palabraGuiones[i+1]=letraSelect;
+                        alert(letraSelect);
+                    }
+                }
+            }
+            cuadrop.innerHTML=palabraGuiones;
+        }
+
     </script>
 </body>
 </html>
