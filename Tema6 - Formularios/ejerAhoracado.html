@@ -23,16 +23,20 @@
         #contador{
             border-top: red 1px solid;
             border-bottom: solid 1px red;
+            color: red;
             padding: 10px;
             margin-top: 10px;
             display: none;
+            font-size: 40px;
         }
         #historial{
             border-top: green 1px solid;
             border-bottom: solid 1px green;
+            color: green;
             padding: 10px;
             margin-top: 10px;
             display: none;
+            font-size: 40px;
         }
         #cuadropalabra{
             border-top: black 1px solid;
@@ -40,6 +44,7 @@
             padding: 10px;
             margin-top: 10px;
             display: none;
+            font-size: 40px;
         }
     </style>
 </head>
@@ -50,7 +55,7 @@
         <h1>Jugador 1</h1><br>
         <div id="form1">
                 <h3>Introduce una palabra</h3>
-                <input type="password" name="palabra" id="palabra1" placeholder="Introduce la palabra">
+                <input type="password" name="palabra" id="palabra1" placeholder="Introduce la palabra" required>
                 <button id="empezar" onclick="start();">Empezar</button>
         </div>
         <div id="contador">
@@ -97,8 +102,8 @@
             <option>Z</option>
         </select>
         <button id="btncomprobar" onclick="sendLetter();">Enviar</button><br><br>
-        <input type="text" id="comprobarPalabra" placeholder="Comprobar Palabra" disabled>
-        <button id="btnComprobarPalabra">Comprobar Palabra</button>
+        <input type="text" id="comprobarPalabra" placeholder="Comprobar Palabra">
+        <button id="btnComprobarPalabra" onclick="resultadoFinal();">Comprobar Palabra</button><br>
     </div>
     <script type="text/javascript">
     var palabraj1, palabraGuiones, intentos=0, letraSelect;
@@ -107,6 +112,7 @@
     var cuadrop = document.getElementById("cuadropalabra");
     var divContador= document.getElementById("contador");
     var divHistorial = document.getElementById("historial");
+    
         function start(){
             document.getElementById("form1").style.display="none";
             document.getElementById("jugador2").style.display="block";
@@ -133,8 +139,28 @@
                     arrayGuiones[i]=letraSelect;
                 }
             }
-            mostrar(arrayGuiones)
+            intentos++;
+            divContador.innerHTML = intentos;
+            divHistorial.innerHTML += letraSelect+" ";
+            mostrar(arrayGuiones);
+            vidas(intentos);
             
+        }
+        function resultadoFinal(){
+            var palabraFinal = document.getElementById("comprobarPalabra").value.toUpperCase();
+            document.getElementById("btncomprobar").disabled = true;
+
+            if(palabraj1==palabraFinal){
+                intentos++;
+                divContador.innerHTML = intentos;
+                mostrar(arrayPal);
+                alert("Has Acertado!!");
+            }else{
+                alert("No es correcto!");
+                intentos++;
+                divContador.innerHTML = intentos;
+                vidas(intentos);
+            }
         }
         function mostrar(a){
             var aux = "";
@@ -142,6 +168,13 @@
                 aux += a[i]+" ";
             }
             cuadrop.innerHTML=aux;
+        }
+        function vidas(b){
+            if(b == 5){
+                mostrar(arrayPal);
+                document.getElementById("jugador2").style.display = "none";
+                alert("Has perdido!");
+            }
         }
 
     </script>
