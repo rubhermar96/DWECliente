@@ -103,6 +103,7 @@
     <script type="text/javascript">
     var palabraj1, palabraGuiones, intentos=0, letraSelect;
     var arrayPal = [];
+    var arrayGuiones=[];
     var cuadrop = document.getElementById("cuadropalabra");
     var divContador= document.getElementById("contador");
     var divHistorial = document.getElementById("historial");
@@ -115,30 +116,32 @@
 
             palabraj1 = document.getElementById("palabra1").value.toUpperCase();
 
-            palabraGuiones = palabraj1.replace(/./g,"_ ");
-            cuadrop.innerHTML=palabraGuiones;
+            palabraGuiones = palabraj1.replace(/./g,"_");
             divContador.innerHTML = intentos;
             arrayPal=palabraj1.split("");
+            arrayGuiones=palabraGuiones.split("");
+            mostrar(arrayGuiones);
         }
 
         function sendLetter(){
+            var rep;
             var sel = document.getElementById("letras");
             letraSelect= sel.options[sel.selectedIndex].text;
 
             for(var i=0; i<arrayPal.length;i++){
-                if(i<1){
-                    if(arrayPal[i]==letraSelect){
-                        palabraGuiones= palabraj1.replace(/letraSelect/g,"_ ");
-                        alert(palabraGuiones);
-                    }
-                }else{
-                    if(arrayPal[i]==letraSelect){
-                        palabraGuiones[i+1]=letraSelect;
-                        alert(letraSelect);
-                    }
+                if(arrayPal[i]==letraSelect){
+                    arrayGuiones[i]=letraSelect;
                 }
             }
-            cuadrop.innerHTML=palabraGuiones;
+            mostrar(arrayGuiones)
+            
+        }
+        function mostrar(a){
+            var aux = "";
+            for(i=0;i<a.length;i++){
+                aux += a[i]+" ";
+            }
+            cuadrop.innerHTML=aux;
         }
 
     </script>
