@@ -1,0 +1,3 @@
+setData -fase 1 --> ondragStart ---> Sobre Elemento
+    v   -fase 2 --> Ondragover ---> Sobre el Destino
+getData -fase 3 --> ondrop ---> sobre el destino

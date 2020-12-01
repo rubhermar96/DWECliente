@@ -42,22 +42,29 @@
 <body>
     <h1>Ejercicio 24. Arrastrar y soltar bidireccional</h1>
     <hr>
-    <div class="div1" ondrop="fase3(pEvento)" ondragover="fase2(pEvento)">
-        <p draggable="true" id="texto" ondragstart="fase1(pEvento)">:D</p>
+    <div class="div1"  id="target1" ondrop="fase3(event);" ondragover="fase2(event);">
+        <p draggable="true" id="texto" ondragstart="fase1(event);">:D</p>
     </div>
-    <div class="div2" ondrop="fase3(pEvento)" ondragover="fase2(pEvento)"></div>
+    <div class="div2" id="target2" ondrop="fase3(event);" ondragover="fase2(event);"></div>
+    <script type="text/javascript">
+
+        function fase1(pEvento){
+            pEvento.dataTransfer.setData("", pEvento.target.id);
+            console.log(pEvento.target.id);
+        }
+
+
+        function fase2(pEvento){
+            pEvento.preventDefault();
+        }
+
+
+        function fase3(pEvento){
+            pEvento.preventDefault();
+            var datos = pEvento.dataTransfer.getData("");
+            pEvento.target.appendChild(document.getElementById(datos));
+        }
+
+    </script>
 </body>
-<script>
-    function fase1(pEvento){
-        pEvento.dataTransfer.setData("",pEvento.target.id);
-    }
-    function fase2(pEvento){
-        pEvento.preventDefault();
-    }
-    function fase3(pEvento){
-        pEvento.preventDefault();
-        var data = pEvento.dataTransfer.getData("");
-        pEvento.target.appendChild(document.getElementById("texto"));
-    }
-</script>
 </html>
