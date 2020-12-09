@@ -78,3 +78,16 @@ cuadropalabra
 tema 7
 
 7++ Hacer click sobre una celda y que te devulva las coordenadas
+
+28++ Validar un formulario seleccionando el campo a validar
+
+29++ Mover los parrafos de posición arrastrando y soltando
+
+30++ No coincidan dos elecciones de un campo select y borrar las opciones no disponibles
+
+31++ Hacer la loteria primitiva (una X y arrastrandola soltarla sobre un numero en una celda y que este apareza abajo)
+
+32++ Hacer un sorteo(6) y despues arrastrar y soltar en casillas con numeros y soltamos en uno y si coincide con los sorteados aumentar la puntuacion
+
+
+

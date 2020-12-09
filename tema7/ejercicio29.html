@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio. Mover los parrafos de posición arrastrandolos</h1>
+    <hr>
+    <p id="p1" ondragover="fase2(event);" ondrop="fase3(event);"><span id="pp1" draggable="true"ondragstart="fase1(event);">Cada torneo tendrá como premio dicha moneda, siendo mayor el premio en los torneos con mayor canon de entrada. También, realizaremos torneos en los que los premios sean productos de diferentes marcas, de forma que nosotros promocionamos esa marca y la marca nos promocionara a nosotros.</span></p>
+    <p id="p2" ondragover="fase2(event);" ondrop="fase3(event);"><span id="pp2" draggable="true"ondragstart="fase1(event);">Al no tener experiencia hemos decidido que todos seamos CEO y trabajemos en conjunto en todas las áreas, según vayamos teniendo experiencia cada uno tomaría distintos puestos director de marketing, ejecutivo, de comunicaciones, etc.</span></p>
+    <p id="p3" ondragover="fase2(event);" ondrop="fase3(event);"><span id="pp3" draggable="true"ondragstart="fase1(event);">Para la atención al cliente crearemos una sección en la web en la que se encontrará un formulario que al rellenarlo y enviarlos nos notificará con toda la información de la incidencia.
+        También pondremos a disposición de nuestros clientes un número telefónico y un correo electrónico de contacto.</span></p>
+    <p id="p4" ondragover="fase2(event);" ondrop="fase3(event);"><span id="pp4" draggable="true"ondragstart="fase1(event);">ARENA.GG: En esta ocasión encontramos una página que pone a disposición todo lo que ya conocemos y se usa en otras páginas pero añade algo para diferenciarse ,unos torneos con formato de liga que con cada victoria nos dará puntos para la clasificación mensual.</span></p>
+    <p id="p5" ondragover="fase2(event);" ondrop="fase3(event);"><span id="pp5" draggable="true"ondragstart="fase1(event);">ESL Play: Esta empresa solo realiza torneos de la propia organización y casi siempre son premios en metálico. Incluyen asimismo una extensa lista de juegos soportados , y se encuentra disponible en la mayoría de regiones. Recibe nuevos torneos semanalmente.</span></p>
+    <p id="p6" ondragover="fase2(event);" ondrop="fase3(event);"><span id="pp6" draggable="true"ondragstart="fase1(event);">BATTLEFY: Es una de las mayores páginas de torneos y tiene un plus importante , empresas como BLIZZARD (que es una de las mayores empresas de videojuegos) lo usan como plataforma oficial , al ser la plataforma oficial tiene la posibilidad de la realización de eventos o torneos personalizados de los juegos de esta empresa.</span></p>
+    
+
+    <script>
+        var intercambio;
+        function fase1(event){
+            event.dataTransfer.setData("", event.target.id);
+        }
+        function fase2(event){
+            event.preventDefault();
+        }
+        function fase3(event){
+            var datos = event.dataTransfer.getData("");
+			event.target.appendChild(document.getElementById(datos));
+        }
+    </script>
+</body>
+</html>
