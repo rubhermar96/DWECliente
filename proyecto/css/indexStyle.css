@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    width: 100%;
+    background-color: rgb(29,29,29);
+    padding: 10px;
+}
+img{
+    width: 100%;
+}
+.logo-header{
+    width: 110px;
+    height: 74px;
+    
+}
