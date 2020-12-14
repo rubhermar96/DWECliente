@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cookies 1 JavaScript</h1>
+    <hr>
+    <button onclick="ponerCookie()">Poner una cookie</button>
+    <script>
+        function ponerCookie(){
+            ponerUnaCookie('calle','mirabel',3);
+        }
+        function ponerUnaCookie(clave, valor, dias=0){
+            var miCookie="";
+            if(dias>0){
+                var fecha = new Date();
+                fecha.setTime(fecha.getTime() + (dias*24*60*60*1000));
+                var expires = "expires="+fecha.toUTCString();
+                miCookie = clave + "=" + valor + ";" + expires; //PERMANENTE
+            }else{
+                miCookie= clave + "=" + valor;//SESIÓN
+            }
+            document.cookie = miCookie;
+        }
+    </script>
+</body>
+</html>
