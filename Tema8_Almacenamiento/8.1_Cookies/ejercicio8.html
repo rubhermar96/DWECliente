@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #saldoCuenta{
+            font-size: 300%;
+        }
+    </style>
+</head>
+<body onload="leerSaldo();">
+    <h1>Ejercicio 8. Ingresar e Introducir Saldo Cuenta Bancaria</h1>
+    <hr>
+    <p id="saldoCuenta"></p>
+
+
+    <input type="radio" name="operacion" id="ingresar">Ingresar <br>
+    <input type="radio" name="operacion" id="extraer">Extraer
+
+    <p>Cantidad</p>
+    <input type="text" name="cantidad" id="cantidad">
+    <button onclick="operar();">Enviar</button>
+    <script>
+        function leerCookie(clave) {
+			var resultado = "";
+			var busqueda = clave + "=";
+			var listCookies = document.cookie.split(';');
+			var par = "";
+			for(var i = 0; i <listCookies.length; i++) {
+				par = listCookies[i]; //Cada elemento del array de cookies: nombre de la cookie y carácter =
+				//Se quitan los espacios en blanco 
+				while (par.charAt(0)==' ') {
+					par = par.substring(1);
+				}
+				//Se compara los que buscamos con el elemento del array. Si devuelve como índice 0 se ha encontrado
+				if (par.indexOf(busqueda) == 0) {
+					resultado = par.substring(busqueda.length,par.length);
+				}
+			}
+			return resultado;
+        }
+        function leerSaldo(){
+            var saldoCookie = leerCookie("saldo");
+
+            if(saldoCookie==""){
+                saldo = 0;
+            }else{
+                saldo = parseInt(saldoCookie);
+            }
+            actualizarSaldo();
+        }
+        function actualizarSaldo(){
+            var fecha = new Date();
+            fecha.setTime(fecha.getTime()+(5*24*60*60*1000));
+            var expires = "expires="+ fecha.toUTCString();
+            document.cookie="saldo="+ saldo + ";" + expires;
+
+            document.getElementById("saldoCuenta").innerHTML= saldo;
+            if(saldo < 0){
+                document.getElementById("saldoCuenta").style.color = "red";
+            }else{
+                document.getElementById("saldoCuenta").style.color = "black";
+            }
+        }
+        function operar() {
+			if(/^\d+$/.test(document.getElementById("cantidad").value))
+			{
+				var cantidad = parseInt(document.getElementById("cantidad").value);
+
+				if(document.getElementById("ingresar").checked)	{
+					saldo = saldo + cantidad;
+				}
+
+				if(document.getElementById("extraer").checked) {
+					saldo = saldo - cantidad;	
+				}
+	
+				actualizarSaldo();
+			} else {
+				alert("Cantidad no válida");
+			}
+		}
+    </script>
+</body>
+</html>

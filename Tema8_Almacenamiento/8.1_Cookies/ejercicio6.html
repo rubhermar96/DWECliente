@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
         #pContador{
             font-family: Arial, Helvetica, sans-serif;
             font-size: 300%;
@@ -17,27 +20,27 @@
     <p id="pContador"></p>
     <script>
         function leerCookie(clave) {
-				var resultado = "";
-				var busqueda = clave + "=";
+			var resultado = "";
+			var busqueda = clave + "=";
 	
-				var listCookies = document.cookie.split(';');
-				var par = "";
+			var listCookies = document.cookie.split(';');
+			var par = "";
 	
-				for(var i = 0; i <listCookies.length; i++) {
-					par = listCookies[i]; //Cada elemento del array de cookies: nombre de la cookie y carácter =
-	
-					//Se quitan los espacios en blanco 
-					while (par.charAt(0)==' ') {
-						par = par.substring(1);
-					}
-	
-					//Se compara los que buscamos con el elemento del array. Si devuelve como índice 0 se ha encontrado
-					if (par.indexOf(busqueda) == 0) {
-						resultado = par.substring(busqueda.length,par.length);
-					}
+			for(var i = 0; i <listCookies.length; i++) {
+				par = listCookies[i]; //Cada elemento del array de cookies: nombre de la cookie y carácter =
+
+				//Se quitan los espacios en blanco 
+				while (par.charAt(0)==' ') {
+					par = par.substring(1);
 				}
-				return resultado;
-            }
+	
+				//Se compara los que buscamos con el elemento del array. Si devuelve como índice 0 se ha encontrado
+				if (par.indexOf(busqueda) == 0) {
+					resultado = par.substring(busqueda.length,par.length);
+				}
+			}
+			return resultado;
+        }
         function contar(){
             var miCookie = leerCookie("accesos");
 
