@@ -64,21 +64,17 @@
                 document.getElementById("saldoCuenta").style.color = "black";
             }
         }
-        function operar() {
-			if(/^\d+$/.test(document.getElementById("cantidad").value))
-			{
+        function calcular() {
+			if(/^\d+$/.test(document.getElementById("cantidad").value)){
 				var cantidad = parseInt(document.getElementById("cantidad").value);
-
 				if(document.getElementById("ingresar").checked)	{
 					saldo = saldo + cantidad;
 				}
-
 				if(document.getElementById("extraer").checked) {
 					saldo = saldo - cantidad;	
 				}
-	
 				actualizarSaldo();
-			} else {
+			}else{
 				alert("Cantidad no válida");
 			}
 		}
