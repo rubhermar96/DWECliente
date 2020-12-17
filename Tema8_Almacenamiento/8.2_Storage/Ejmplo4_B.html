@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: chartreuse;
+        }
+        button{
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo 4 B Storage</h1>
+    <hr>
+    <button onclick="ponerValor();">Accionar</button>
+    <p id="parrafo"></p>
+    <script type="text/javascript">
+        window.addEventListener("storage", function(){
+            document.getElementById("parrafo").innerHTML = "<h2>Se modifico?</h2>";
+        });
+        function ponerValor(){
+            localStorage.setItem("clave","valor2");
+        }
+    </script>
+</body>
+</html>

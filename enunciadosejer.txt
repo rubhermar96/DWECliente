@@ -89,5 +89,9 @@ tema 7
 
 32++ Hacer un sorteo(6) y despues arrastrar y soltar en casillas con numeros y soltamos en uno y si coincide con los sorteados aumentar la puntuacion
 
+Tema 8
+
+10++ Modificar la validez respecto a la actual de una cookie(minutos) y hasta la fecha indicada (formulario para cambiar expires se piden o minutos o fecha, indicando el nombre)
+
 
 

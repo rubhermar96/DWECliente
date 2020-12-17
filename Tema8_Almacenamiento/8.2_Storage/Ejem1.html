@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo 1 Storage</h1>
+    <hr>
+    <p>Clave</p>
+    <input type="text" id="clave">
+    <p>Valor</p>
+    <input type="text" id="valor"><br><br>
+    <button onclick="ponerClaveValor();">Poner</button>
+    <button onclick="obtenerValor();">Leer</button>
+    <button onclick="modificarPropiedad(alert(localStorage.ciudad + ' - ' + localStorage['color']))">ModificarValladolidVerde</button>
+    <button onclick="alert('Elementos: ' + localStorage.length);">Número de elementos</button>
+    <script type="text/javascript">
+        function ponerClaveValor(){
+            var c = document.getElementById("clave").value;
+            var v = document.getElementById("valor").value;
+            window.localStorage.setItem(c,v);
+        }
+        function obtenerValor(){
+            var c = document.getElementById("clave").value;
+            alert(window.localStorage.getItem(c));
+        }
+        function modificarPropiedad(){
+            window.localStorage.ciudad = "Valladolid";
+            localStorage["color"] = "verde";
+            alert(localStorage.ciudad + " - " + localStorage["color"]);
+        }
+    </script>
+</body>
+</html>
