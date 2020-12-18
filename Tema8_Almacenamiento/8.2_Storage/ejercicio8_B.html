@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 8_A. Pasar valores de uno a otro en otra pagina</h1>
+    <hr>
+    <select name="selectB" id="selectB">
+    </select>
+    <script>
+        window.addEventListener("storage", function(pEvento){
+            var selector = document.getElementById("selectB");
+            selector.innerHTML="";
+            var c="";
+            for(i=0;i<localStorage.length;i++){
+                c=localStorage.getItem(localStorage.key(i));
+                var d=document.createElement("option");
+                d.innerHTML=c;
+                selector.appendChild(d);
+            }
+        });
+    </script>
+</body>
+</html>

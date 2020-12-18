@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 8_A. Pasar valores de uno a otro en otra pagina</h1>
+    <hr>
+    <select name="selectA" id="selectA">
+        <option value="Uno">Uno</option>
+        <option value="Dos">Dos</option>
+        <option value="Tres">Tres</option>
+        <option value="Cuatro">Cuatro</option>
+        <option value="Cinco">Cinco</option>
+    </select>
+    <button onclick="mover();">Mover Seleccionado</button>
+
+    <script>
+        var cont=1;
+        function mover(){
+            var clave = "opcion"+cont;
+            var valor = document.getElementById("selectA").value;
+            localStorage.setItem(clave,valor);
+            cont++;
+        }
+    </script>
+</body>
+</html>

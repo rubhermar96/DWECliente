@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td,th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 7. Pasar cookies a localStorage</h1>
+    <hr>
+    <button onclick="verCookies();">Ver Cookies</button>
+    <button onclick="verLocalStorage();">Ver localStorage</button>
+    <button onclick="moverCookies();">Pasar Cookies a LocalStorage</button>
+    <button onclick="moverLocalStorage();">Pasar LocalStorage a Cookies</button>
+    <hr>
+    <table>
+        <tbody>
+            <tr>
+                <th>Cookies</th><th>localStorage</th>
+            </tr>
+            <tr>
+                <td id="visorCookies"></td><td id="visorStorage"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function verCookies(){
+            var listaCookies = document.cookie.split(";");
+            c="";
+            for (i=0;i<listaCookies.length;i++){
+                c += listaCookies[i] +"<br />";
+            }
+            document.getElementById("visorCookies").innerHTML=c;
+        }
+        function verLocalStorage(){
+            var c="";
+			//Se almacenan alfabéticamente
+			for(i=0;i<localStorage.length;i++) {
+				c += localStorage.key(i) + "=" + localStorage.getItem(localStorage.key(i)) + "<br />";
+			}
+			document.getElementById("visorStorage").innerHTML = c;
+        }
+        function moverCookies(){
+            var listaCookies = document.cookie.split(";");
+            var c="";
+            for(i=0;i<listaCookies.length;i++){
+                c = listaCookies[i].split("=");
+                v= c[1];
+                c=c[0];
+                localStorage.setItem(c,v);
+            }
+        }
+        function moverLocalStorage(){
+            var c;
+            var v;
+            for(i=0; i<localStorage.length;i++){
+                c = localStorage.key(i);
+                v = localStorage.getItem(localStorage.key(i));
+                document.cookie = c + "=" +v;
+            }
+        }
+    </script>
+</body>
+</html>

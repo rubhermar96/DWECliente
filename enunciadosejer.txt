@@ -93,5 +93,12 @@ Tema 8
 
 10++ Modificar la validez respecto a la actual de una cookie(minutos) y hasta la fecha indicada (formulario para cambiar expires se piden o minutos o fecha, indicando el nombre)
 
+Tema 8.2
+7++ Pasar cookies a localStorage y viceversa, visualizar cookies y localStorage.
 
+8++ Pasar valores de un select a otro en otra página
+
+9++ Hacer 3 páginas, juego ahorcado, tablero en pagina principal y los jugadores A y B juegan con selects
+
+10++
 
