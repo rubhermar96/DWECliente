@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ejemplo 1 Storage</h1>
+    <h1>Ejercicio 10</h1>
     <hr>
     <p>Clave</p>
     <input type="text" id="clave">
@@ -60,13 +60,14 @@
             if(document.getElementById("modFecha").checked){
                 fecha = new Date(document.getElementById("fecha").value);
                 expires = "expires="+fecha.toUTCString();
-                console.log(expires);
+                alert("Fecha Modificada");
             }
-            if(doucment.getElementById("modMin").checked){
+            if(document.getElementById("modMin").checked){
                 var min = parseInt(document.getElementById("minutos").value);
                 fecha = new Date();
                 fecha.setMinutes(fecha.getMinutes()+min);
                 expires = "expires="+fecha.toUTCString();
+                alert("Minutos Modificados");
             }
             document.cookie=c+"="+v+";"+expires;
         }
