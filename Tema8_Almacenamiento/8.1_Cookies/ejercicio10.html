@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo 1 Storage</h1>
+    <hr>
+    <p>Clave</p>
+    <input type="text" id="clave">
+    <p>Valor</p>
+    <input type="text" id="valor">
+    <p>Fecha</p>
+    <input type="date" name="fecha" id="fecha">
+    <p>Minutos</p>
+    <input type="text" id="minutos"><br><br>
+    <input type="radio" name="operacion" id="modFecha">Modificar Fecha <br>
+    <input type="radio" name="operacion" id="modMin">Modificar Minutos <br><br>
+    <button onclick="añadirCookie();">Añadir</button>
+    <button onclick="modificarCookie();">Modificar</button>
+    <button onclick="eliminarCookie(document.getElementById('clave').value);">Eliminar</button>
+    <script>
+        function leerCookie(clave) {
+		    var resultado = "";
+			var busqueda = clave + "=";
+			var listCookies = document.cookie.split(';');
+			var par = "";
+			for(var i = 0; i <listCookies.length; i++) {
+				par = listCookies[i]; //Cada elemento del array de cookies: nombre de la cookie y carácter =
+				//Se quitan los espacios en blanco 
+				while (par.charAt(0)==' ') {
+					par = par.substring(1);
+				}
+				//Se compara los que buscamos con el elemento del array. Si devuelve como índice 0 se ha encontrado
+				if (par.indexOf(busqueda) == 0) {
+					resultado = par.substring(busqueda.length,par.length);
+				}
+			}
+			return resultado;
+        }
+        function añadirCookie(){
+            var c = document.getElementById("clave").value;
+            var v = document.getElementById("valor").value;
+
+            document.cookie= c + "=" + v;
+            alert("Cookie Añadida");
+        }
+        function eliminarCookie(clave){
+            document.cookie= clave + "=; max-age=0";
+            alert("Cookie Eliminada");
+        }
+        function modificarCookie(){
+            var expires;
+            var fecha;
+            var c = document.getElementById("clave").value;
+            var v = leerCookie(c);
+
+            if(document.getElementById("modFecha").checked){
+                fecha = new Date(document.getElementById("fecha").value);
+                expires = "expires="+fecha.toUTCString();
+                console.log(expires);
+            }
+            if(doucment.getElementById("modMin").checked){
+                var min = parseInt(document.getElementById("minutos").value);
+                fecha = new Date();
+                fecha.setMinutes(fecha.getMinutes()+min);
+                expires = "expires="+fecha.toUTCString();
+            }
+            document.cookie=c+"="+v+";"+expires;
+        }
+    </script>
+</body>
+</html>
