@@ -25,6 +25,28 @@ img{
 .titulo-header h1{
     font-size: 70px;
 }
+/*Media Header*/
+@media (max-width:500px){
+    .titulo-header h1{
+        font-size: 55px;
+    }
+    .logo-header{
+        width: 90px;
+        height: 54px;
+    }
+}
+@media (max-width:400px){
+    header{
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-header{
+        width: 100%;
+    }
+    .logo-header img{
+        width: 74px;
+    }
+}
 /*NAVEGADOR*/
 nav{
     background-color: rgb(49,49,49);
@@ -54,7 +76,7 @@ nav button:hover{
     top: 0px;
     background-color: teal;
     padding: 10px;
-    width: 200px;
+    width: 250px;
     height: 100%;
 }
 .menu-desplegable button{
