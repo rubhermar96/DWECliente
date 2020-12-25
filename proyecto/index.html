@@ -12,15 +12,24 @@
     <!--Header-->
     <header>
         <div class="logo-header">
-            <img src="images/logo.png" alt="">
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
         </div>
         <div class="titulo-header">
-
+            <h1>SurfGuide</h1>
         </div>
     </header>
     <!--Nav-->
     <nav>
-
+        <button onclick="openMenu();" class="material-icons">menu</button>
+        <!--Menu Desplegable-->
+        <div class="menu-desplegable" id="menuDesp">
+            <button onclick="closeMenu();">X</button>
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+            <a href="">Link 4</a>
+            <a href="">Link 5</a>
+        </div>
     </nav>
     <!--Main-->
     <main>
@@ -31,7 +40,14 @@
 
     </footer>
     <script type="text/javascript">
-    
+        //Abrir/Cerrar Menu Desplegable
+        var menuDesplegable = document.getElementById("menuDesp");
+        function openMenu(){
+            menuDesplegable.style.display="flex";
+        }
+        function closeMenu(){
+            menuDesplegable.style.display="none";
+        }
     </script>
 </body>
 </html>
