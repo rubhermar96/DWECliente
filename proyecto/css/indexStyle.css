@@ -11,7 +11,8 @@ header{
     background-color: rgb(29,29,29);
     padding: 10px;
     color: whitesmoke;
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
 }
 img{
     width: 100%;
