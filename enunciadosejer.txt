@@ -98,7 +98,7 @@ Tema 8.2
 
 8++ Pasar valores de un select a otro en otra página
 
-9++ Hacer 3 páginas, juego ahorcado, tablero en pagina principal y los jugadores A y B juegan con selects
+9++ Hacer 3 páginas, juego tres en raya, tablero en pagina principal y los jugadores A y B juegan con selects
 
 10++
 
