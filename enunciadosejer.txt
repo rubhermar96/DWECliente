@@ -100,5 +100,7 @@ Tema 8.2
 
 9++ Hacer 3 páginas, juego tres en raya, tablero en pagina principal y los jugadores A y B juegan con selects
 
-10++
+10++ Pasar un formulario (en ventana A) a otra ventana (B). Meterlo en un objeto, pasar el objeto a json y el json a localstorage.
+
+MAPAS JAVASCRIPT PARA LA PRACTICA LEAFLET
 
