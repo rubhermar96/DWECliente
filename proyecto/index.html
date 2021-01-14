@@ -7,6 +7,7 @@
     <title>Inicio Proyecto</title>
     <link rel="stylesheet" href="css/indexStyle.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
     <!--Header-->
@@ -20,15 +21,13 @@
     </header>
     <!--Nav-->
     <nav>
-        <button onclick="openMenu();" class="material-icons">menu</button>
+        <button class="material-icons" id="openMenu">menu</button>
         <!--Menu Desplegable-->
         <div class="menu-desplegable" id="menuDesp">
-            <button onclick="closeMenu();">X</button>
-            <a href="">Link 1</a>
-            <a href="">Link 2</a>
-            <a href="">Link 3</a>
-            <a href="">Link 4</a>
-            <a href="">Link 5</a>
+            <button id="closeMenu">Cerrar</button>
+            <a href="">Guia Spots</a>
+            <a href="">Guia Tablas</a>
+            <a href="">Guia Neoprenos</a>
         </div>
     </nav>
     <!--Main-->
@@ -37,17 +36,7 @@
     </main>
     <!--Footer-->
     <footer>
-
+        
     </footer>
-    <script type="text/javascript">
-        //Abrir/Cerrar Menu Desplegable
-        var menuDesplegable = document.getElementById("menuDesp");
-        function openMenu(){
-            menuDesplegable.style.display="flex";
-        }
-        function closeMenu(){
-            menuDesplegable.style.display="none";
-        }
-    </script>
 </body>
 </html>

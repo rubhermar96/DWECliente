@@ -25,47 +25,29 @@ img{
 .titulo-header h1{
     font-size: 70px;
 }
-/*Media Header*/
-@media (max-width:500px){
-    .titulo-header h1{
-        font-size: 55px;
-    }
-    .logo-header{
-        width: 90px;
-        height: 54px;
-    }
-}
-@media (max-width:400px){
-    header{
-        flex-direction: column;
-        text-align: center;
-    }
-    .logo-header{
-        width: 100%;
-    }
-    .logo-header img{
-        width: 74px;
-    }
-}
+
 /*NAVEGADOR*/
 nav{
     background-color: rgb(49,49,49);
     width: 100%;
     padding: 5px;
-    text-align: right;
+    text-align: center;
 }
 nav button{
     background-color: rgb(49,49,49);
     border: 2px solid whitesmoke;
     border-radius: 5px;
     color: whitesmoke;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
     cursor: pointer;
     transition: background-color 1s;
 }
 nav button:hover{
     background-color: teal;
+}
+nav #closeMenu:hover{
+    background-color: rgb(161, 0, 0);
 }
 /*Menu Desplegable*/
 .menu-desplegable{
@@ -76,8 +58,9 @@ nav button:hover{
     top: 0px;
     background-color: teal;
     padding: 10px;
-    width: 250px;
+    width: 50%;
     height: 100%;
+    text-align: left;
 }
 .menu-desplegable button{
     padding: 5px;
@@ -97,4 +80,33 @@ nav button:hover{
 .menu-desplegable a:hover{
     background-color: whitesmoke;
     color: teal;
+}
+
+/*Media Querys*/
+@media (max-width:500px){
+    /*Media Header*/
+    .titulo-header h1{
+        font-size: 55px;
+    }
+    .logo-header{
+        width: 90px;
+        height: 54px;
+    }
+    /*Media Menu*/
+    .menu-desplegable{
+        width: 100%;
+    }
+}
+@media (max-width:400px){
+    /*Media Header*/
+    header{
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-header{
+        width: 100%;
+    }
+    .logo-header img{
+        width: 74px;
+    }
 }
