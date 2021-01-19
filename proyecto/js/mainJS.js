@@ -12,5 +12,7 @@ function startJS(){
         //Mostrar Boton Menu
         document.getElementById("openMenu").style.visibility="visible";
     }
+
+    
 }
 window.onload=startJS;
