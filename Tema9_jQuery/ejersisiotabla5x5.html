@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="recursos/jquery-3.5.1.js"></script>
+    <style>
+        table,tr,td{
+            border: 1px solid black;
+        }
+        td{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>A</td><td>B</td><td>C</td><td>D</td><td>E</td>
+            </tr>
+            <tr>
+                <td>F</td><td>G</td><td>H</td><td>I</td><td>J</td>
+            </tr>
+            <tr>
+                <td>K</td><td>L</td><td>M</td><td>N</td><td>Ñ</td>
+            </tr>
+            <tr>
+                <td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td>
+            </tr>
+            <tr>
+                <td>T</td><td>U</td><td>V</td><td>W</td><td>X</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(function(){
+            $("td").on("click", function(evento){
+                alert(evento.target.innerHTML)
+            });
+        });
+    </script>
+</body>
+</html>
