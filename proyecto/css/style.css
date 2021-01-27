@@ -5,7 +5,6 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 /*HEADER*/
 header{
     width: 100%;
@@ -26,7 +25,6 @@ img{
 .titulo-header h1{
     font-size: 70px;
 }
-
 /*NAVEGADOR*/
 nav{
     background-color: rgb(49,49,49);
@@ -62,6 +60,7 @@ nav #closeMenu:hover{
     width: 50%;
     height: 100%;
     text-align: left;
+    z-index: 66;
 }
 .menu-desplegable button{
     padding: 5px;
@@ -83,19 +82,53 @@ nav #closeMenu:hover{
     color: teal;
 }
 /*MAIN*/
-main{
-    background-color: rgb(29,29,29);
-}
+
 /*SLIDER*/
 .slides{
     width: 80%;
     margin: 20px auto;
     overflow: hidden;
-    
 }
 .slides img{
     width: 100%;
 }
+/*Slide Pagination*/
+.slidesjs-pagination{
+    background-color: rgba(9, 9, 9, 0.753);
+    list-style: none;
+    overflow: hidden;
+}
+.slidesjs-pagination li{
+    display: inline-flex;
+}
+.slidesjs-pagination li a{
+    padding: 13px 20px;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: background-color 1s;
+}
+.slidesjs-pagination li a:hover{
+    background-color: whitesmoke;
+    color: rgba(9, 9, 9, 0.753);
+}
+.slides .active{
+    background-color: rgba(0, 128, 128, 0.514);
+}
+/*Slide Navigation*/
+.slidesjs-navigation{
+    background-color: rgba(9, 9, 9, 0.753);
+    text-decoration: none;
+    color: whitesmoke;
+    display: inline-flex;
+    float: right;
+    padding: 10px 20px;
+    transition: background-color 1s;
+}
+.slidesjs-navigation:hover{
+    background-color: whitesmoke;
+    color: rgba(9, 9, 9, 0.753);
+}
+
 
 /*Media Querys*/
 @media (max-width:500px){

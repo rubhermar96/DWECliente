@@ -5,32 +5,32 @@
     var Plugin, defaults, pluginName;
     pluginName = "slidesjs";
     defaults = {
-      width: 940,
-      height: 528,
+      width: 1030,
+      height: 524,
       start: 1,
       navigation: {
         active: true,
-        effect: "slide"
+        effect: "fade"
       },
       pagination: {
         active: true,
-        effect: "slide"
+        effect: "fade"
       },
       play: {
         active: false,
-        effect: "slide",
+        effect: "fade",
         interval: 5000,
-        auto: false,
+        auto: true,
         swap: true,
         pauseOnHover: false,
-        restartDelay: 2500
+        restartDelay: 1000
       },
       effect: {
         slide: {
-          speed: 500
+          speed: 1500
         },
         fade: {
-          speed: 300,
+          speed: 1500,
           crossfade: true
         }
       },
@@ -114,17 +114,17 @@
         });
       });
       if (this.options.navigation.active) {
-        prevButton = $("<a>", {
-          "class": "slidesjs-previous slidesjs-navigation",
-          href: "#",
-          title: "Previous",
-          text: "Previous"
-        }).appendTo($element);
         nextButton = $("<a>", {
-          "class": "slidesjs-next slidesjs-navigation",
+          "class": "slidesjs-next slidesjs-navigation material-icons",
           href: "#",
-          title: "Next",
-          text: "Next"
+          title: "Siguiente",
+          text: "skip_next"
+        }).appendTo($element);
+        prevButton = $("<a>", {
+          "class": "slidesjs-previous slidesjs-navigation material-icons",
+          href: "#",
+          title: "Anterior",
+          text: "skip_previous"
         }).appendTo($element);
       }
       $(".slidesjs-next", $element).click(function(e) {
@@ -139,16 +139,16 @@
       });
       if (this.options.play.active) {
         playButton = $("<a>", {
-          "class": "slidesjs-play slidesjs-navigation",
+          "class": "slidesjs-play slidesjs-navigation material-icons",
           href: "#",
-          title: "Play",
-          text: "Play"
+          title: "Reproducir",
+          text: "play_arrow"
         }).appendTo($element);
         stopButton = $("<a>", {
-          "class": "slidesjs-stop slidesjs-navigation",
+          "class": "slidesjs-stop slidesjs-navigation material-icons",
           href: "#",
-          title: "Stop",
-          text: "Stop"
+          title: "Parar",
+          text: "pause"
         }).appendTo($element);
         playButton.click(function(e) {
           e.preventDefault();
