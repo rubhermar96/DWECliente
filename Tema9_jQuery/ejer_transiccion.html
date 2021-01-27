@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="recursos/jquery-3.5.1.js"></script>
+    <style>
+        div{
+            position: relative;
+            padding: 20px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 3px 3px palevioletred;
+            border-radius: 50%;
+            background-color: paleturquoise;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 10px;
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <button id="iniciar">Iniciar</button>
+    <hr>
+    <div id="animar">
+        Hola :D
+    </div>
+    <script>
+        $(function(){
+            $("#iniciar").click(function(){
+                $("#animar").animate({fontSize:"34px",height:"200px",width:"200px"},2000);
+                $("#animar").animate({left:250,top:400},1500);
+                $("#animar").animate({left:500,top:-1000},2500);
+                $("#animar").animate({left:800,top:1000},1000);
+                $("#animar").animate({left:50,top:50},3500);
+            });
+        });
+    </script>
+</body>
+</html>
