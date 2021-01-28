@@ -38,13 +38,12 @@
 						db = peticion.result;
 						var transaccion = db.transaction(db.objectStoreNames, "readwrite");
 
-						spotsGuide = transaccion.objectStore("spots");
-						spotsGuide.put({nombre:"El Palmar",localidad:"Vejer de La Frontera",coordenadas:"304320"});
-						spotsGuide.put({nombre:"La Fontanilla",localidad:"Conil de la Frontera",coordenadas:"304320"});
-						spotsGuide.put({nombre:"El Faro",localidad:"Caños de Meca",coordenadas:"304320"});
-						spotsGuide.put({nombre:"Roche",localidad:"Conil de la Frontera",coordenadas:"304320"});
-						spotsGuide.put({nombre:"El V",localidad:"Caños de Meca",coordenadas:"304320"});
-						spotsGuide.put({nombre:"Santa Maria",localidad:"Cádiz",coordenadas:"304320"});
+						spotsGuide.put({nombre:"El Palmar",localidad:"Vejer de La Frontera",coordenadas:"304320",coeficiente:"",marea:"",dirSwell:"",imagenSpot:"",descripcionSpot:""});
+          				spotsGuide.put({nombre:"La Fontanilla",localidad:"Conil de la Frontera",coordenadas:"304320",coeficiente:"",marea:"",dirSwell:"",imagenSpot:"",descripcionSpot:""});
+          				spotsGuide.put({nombre:"El Faro",localidad:"Caños de Meca",coordenadas:"304320",coeficiente:"",marea:"",dirSwell:"",imagenSpot:"",descripcionSpot:""});
+          				spotsGuide.put({nombre:"Roche",localidad:"Conil de la Frontera",coordenadas:"304320",coeficiente:"",marea:"",dirSwell:"",imagenSpot:"",descripcionSpot:""});
+          				spotsGuide.put({nombre:"CampoLoco",localidad:"San Fernando",coordenadas:"304320",coeficiente:"",marea:"",dirSwell:"",imagenSpot:"",descripcionSpot:""});
+          				spotsGuide.put({nombre:"Santa Maria",localidad:"Cádiz",coordenadas:"304320",coeficiente:"",marea:"",dirSwell:"",imagenSpot:"",descripcionSpot:""});
 
 					};
 

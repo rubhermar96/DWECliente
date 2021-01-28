@@ -10,15 +10,15 @@
       start: 1,
       navigation: {
         active: true,
-        effect: "fade"
+        effect: "slide"
       },
       pagination: {
         active: true,
-        effect: "fade"
+        effect: "slide"
       },
       play: {
-        active: false,
-        effect: "fade",
+        active: true,
+        effect: "slide",
         interval: 5000,
         auto: true,
         swap: true,
@@ -27,7 +27,7 @@
       },
       effect: {
         slide: {
-          speed: 1500
+          speed: 2500
         },
         fade: {
           speed: 1500,
