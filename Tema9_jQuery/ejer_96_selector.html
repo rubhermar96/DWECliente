@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="recursos/jquery-3.5.1.js"></script>
+    <style>
+        div{
+            padding: 10px;
+            width: 200px;
+            border: 1px solid black;
+        }
+        ul{
+            border: 1px solid black;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Seleccionar: 
+        <select name="" id="">
+            <option selected="selected" value="todos">Todos</option>
+            <option value="españa">España</option>
+            <option value="portugal">Portugal</option>
+            <option value="francia">Francia</option>
+        </select>
+    </div>
+    <ul>
+        <li class="item portugal">Lisboa</li>
+        <li class="item españa">Madrid</li>
+        <li class="item francia">Paris</li>
+        <li class="item portugal">Oporto</li>
+        <li class="item españa">Valencia</li>
+        <li class="item francia">Marsella</li>
+        <li class="item portugal">Braga</li>
+        <li class="item españa">Tenerife</li>
+        <li class="item francia">Lyon</li>
+    </ul>
+    <script>
+        $(function(){
+            $("select").change(function(){
+                var seleccion = $("select").val();
+                if(seleccion == "todos"){
+                    $("li").filter(".item").show();
+                }else{
+                    $("li").filter(".item").hide();
+                    $("li").filter(".item ."+seleccion).show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

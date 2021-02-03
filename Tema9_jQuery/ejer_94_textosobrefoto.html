@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 20px;
+            width: 200px;
+        }
+        .txt{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img class="imagen" src="recursos/parque_eolico.jpg" alt="">
+        <p class="txt">Texto de Prueba.</p>
+    </div>
+    <script>
+        $(function(){
+            $(".imagen").hover(function(){
+                $(".imagen")
+            })
+        });
+    </script>
+</body>
+</html>

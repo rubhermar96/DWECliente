@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <script src="recursos/jquery-3.5.1.js"></script>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>jQuery_92 - Ejercicio: Realizar un menú desplegable</h1>
+    <hr />
+    <img class="imgs"src="recursos/iceberg1.jpg" alt="">
+    <img class="imgs" src="recursos/iceberg2.jpg" alt="">
+    <script>
+        $(function(){
+            $(".imgs").hover(function(){
+                $(this).animate({width:600},500);
+            },function(){
+                $(this).animate({width:300});
+            })
+        })
+    </script>
 </body>
 </html>
