@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="recursos/jquery-3.5.1.js"></script>
 </head>
 <body>
     <button id="b1">Una única lista con todos los elementos de la tabla</button>
@@ -19,7 +20,23 @@
         <tr><td>Capitulo 6</td><td>A</td><td>B</td><td>C</td></tr>
     </table>
     <script>
-        $(func)
+        $(function(){
+            $("#b1").click(function(){
+
+            });
+            $("#b2").click(function(){
+
+            });
+            $("#b3").click(function(){
+                $("body ul").remove();
+                $("table tr").each(function(x){
+                    $("body").append("<ul>");
+                    $(this).children().each(function(i){
+                        $("body ul:last").append("<li>"+$(this).text()+"</li>");
+                    })
+                })
+            });
+        })
     </script>
 </body>
 </html>

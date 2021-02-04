@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="recursos/jquery-3.5.1.js"></script>
+    <style>
+        table,td,tr{
+            border: 2px solid black;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    DNI <br>
+    <input type="text" size="15" id="dni"><br>
+    Nombre <br>
+    <input type="text" size="15" id="nombre"><br>
+    Edad <br>
+    <input type="text" size="15" id="edad"><br><br>
+    <button id="añadir">Añadir</button><br><br>
+    <table>
+        <tbody id="tabla">
+            <tr><td>DNI</td><td>Nombre</td><td>Edad</td></tr>
+        </tbody>
+    </table>
+    <script>
+        $(function(){
+            $("#añadir").click(function(){
+                $("#tabla").append("<tr>");
+                $("input").each(function(){
+                    var cont = $(this).val();
+                    $("#tabla tr:last").append("<td>"+cont+"</td>");
+                });
+                $("#tabla").append("</tr>");    
+            });
+
+            $("td").click(function(){
+                console.log("click")
+                $(this).animate({fontSize:50,borderWidth:40},2000);
+                $(this).animate({fontSize:14,borderWidth:2,},2000);
+            });
+            $("tr").dblclick(function(){
+                var cont = 0;
+                $(this).children().each(function(){
+                    if(cont=0){
+                        $("#dni").val($(this).text());
+                        cont++;
+                    }
+                    if(cont=1){
+                        $("#nombre").val($(this).text());
+                        cont++;
+                    }
+                    if(cont=2){
+                        $("#edad").val($(this).text());
+                        cont++;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
