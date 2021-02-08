@@ -58,7 +58,7 @@ function startJS(){
               spotsGuide.put({nombre:"El Faro",localidad:"Cabo de Trafalgar",coordenadas:"36.18385889919317, -6.035755275330941",coeficiente:"Todos",marea:"Baja",dirSwell:"Sur y SurOeste",imagenSpot:"images/faro2.jpg",descripcionSpot:"",rompiente:"Orillera de Arena",dirViento:"Este y Norte"});
               spotsGuide.put({nombre:"Roche",localidad:"Conil de la Frontera",coordenadas:"36.317651233009805, -6.155525453334802",coeficiente:"Todos",marea:"Baja",dirSwell:"Sur y SurOeste",imagenSpot:"images/roche.jpg",descripcionSpot:"",rompiente:"Arena",dirViento:"Este y Norte"});
               spotsGuide.put({nombre:"CampoLoco",localidad:"San Fernando",coordenadas:"36.429371024603554, -6.231212880915914",coeficiente:"Alto +80",marea:"Alta",dirSwell:"Sur y SurOeste",imagenSpot:"images/campoloco.jpg",descripcionSpot:"",rompiente:"Orillera de Arena",dirViento:"Este y Norte"});
-              spotsGuide.put({nombre:"El VeryLate",localidad:"Caños de Meca",coordenadas:"36.18442904041706, -6.016569194038305",coeficiente:"Alto +90",marea:"Alta",dirSwell:"Sur, SurEste y SurOeste",imagenSpot:"images/veryLate.jpg",descripcionSpot:"", rompiente:"Roca",dirViento:"Norte y Oeste"});
+              spotsGuide.put({nombre:"El Club",localidad:"Caños de Meca",coordenadas:"36.18442904041706, -6.016569194038305",coeficiente:"Alto +90",marea:"Alta",dirSwell:"Sur, SurEste y SurOeste",imagenSpot:"images/veryLate.jpg",descripcionSpot:"", rompiente:"Roca",dirViento:"Norte y Oeste"});
             };
             //MOSTRAR LISTA SPOTS EN guideSpots.html
             var peticionCursor = spotsGuide.openCursor();
@@ -105,6 +105,7 @@ function startJS(){
         divSpot.appendChild(divImagen);
         divSpot.appendChild(divNombre);
         divSpot.appendChild(divLoc);
+        divSpot.classList.add("div-spot");
 
         document.getElementById("lista-spots").appendChild(divSpot);
 
