@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ajax_02 - Básico con acceso a una base de datos</title>
+		<link rel="icon" type="image/x-icon" href="../recursos/favicon.ico">
+		<style type="text/css">
+			table,tr,th,td{
+                border: solid 1px black;
+            }
+            th,td{
+                padding: 5px;
+                text-align: center;
+            }
+		</style>
+	</head>
+	<body onload="realizarPeticion()">
+		<h1>ajax_08 - Tabla tiempos Provincias</h1>
+		<hr />
+		<br /><br />
+
+		<table id="contenido">
+            <tr><th>Codigo</th><th>Provincia</th><th>Temperatura ºC</th><th>Estado</th></tr>
+        </table>
+
+		<script type="text/javascript">
+			function realizarPeticion() {
+				var peticion;
+
+				//PASO 2: Creación del objeto XMLHttpRequest
+				if(window.XMLHttpRequest) {
+					peticion = new XMLHttpRequest();
+				} else if(window.ActiveXObject) {
+					peticion = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				//PASO 3: Realizar la petición al servidor
+				peticion.open('GET','ajax_ejer_08.php',true);
+  				peticion.send(null);
+
+  				//PASO 4: Gestionar la respuesta (en este caso con una función anónima)
+  				peticion.onreadystatechange = function (evento) {
+					if((peticion.readyState == 4) && ((peticion.status == 200) )){
+						//PASO 5: procesar la respuesta
+						document.getElementById("contenido").innerHTML += peticion.responseText;
+					}
+  				};
+			}
+		</script>
+	</body>
+</html>
