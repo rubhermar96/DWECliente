@@ -285,6 +285,17 @@ footer p{
 .form-registro *{
     padding: 5px;
 }
+/*Sessions*/
+.main-sessions{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+.sesiones{
+    display: flex;
+    flex-direction: row;
+}
 
 
 
