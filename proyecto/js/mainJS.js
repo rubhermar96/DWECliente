@@ -4,14 +4,13 @@ function startJS(){
       //Abrir Menu Desplegable
       $("#openMenu").click(function(){
         $(".menu-desplegable").css("display","flex");
-        $(".menu-desplegable").animate({width:"100%"},1000);
+        $(".menu-desplegable").animate({width:"100%"},500);
         $("#openMenu").css("visibility","hidden");
       });
       //Cerrar Menu Desplegable
       $("#closeMenu").click(function(){
-        $(".menu-desplegable").animate({width:"0%"},0);
+        $(".menu-desplegable").css("display","none")
         $("#openMenu").css("visibility","visible");
-        $(".menu-desplegable").css("display","none");
         
       });
     });
@@ -39,7 +38,7 @@ function startJS(){
         });
       });
       //CREACION BASE DE DATOS
-      var peticion,db,spotsGuide,usersGuide,SessionsUsers;			
+      var peticion,db,spotsGuide,usersGuide;			
 
       if (window.indexedDB) {
         peticion = window.indexedDB.open("surfGuide",4);
@@ -70,15 +69,21 @@ function startJS(){
                 cursor.continue();
               }
             }
+            db.close();
           }
         };
     
         peticion.onupgradeneeded = function (evento) {
           db = peticion.result;
+          //Tabla spots
           spotsGuide = db.createObjectStore("spots", {keyPath:"cod_spot", autoIncrement:true});
           spotsGuide.createIndex("por_codigo", "cod_spot", {unique: true});
           spotsGuide.createIndex("por_nombre", "nombre");
           spotsGuide.createIndex("por_localidad", "localidad");
+          //Tabla usuarios
+          spotsGuide = db.createObjectStore("users",{keyPath:"cod_user",autoIncrement:true});
+          spotsGuide.createIndex("por_codigo","cod_user",{unique:true});
+          db.close()
         };
       } else {
         console.log("IndexedDB no está soportado");
@@ -106,10 +111,42 @@ function startJS(){
         divSpot.appendChild(divNombre);
         divSpot.appendChild(divLoc);
         divSpot.classList.add("div-spot");
-
+        divSpot.addEventListener("click",function(){
+          var cont = $(this).index();
+          if($(this).index()==cont){
+            $(".div-spot-plus:eq("+cont+")").css("display","flex");
+          }
+        });
         document.getElementById("lista-spots").appendChild(divSpot);
 
-      }
+        //Mostrar más información Spots
+        var divSpotPlus = document.createElement("div");
+        var divInfo = document.createElement("div");
+        var listaInfo = document.createElement("ul");
 
+        listaInfo.innerHTML = "<li>Nombre: "+spot.nombre+"</li><li>Localidad: "+spot.localidad+"</li><li>Tipo Rompiente: "+spot.rompiente+"</li><li>Viento: "+spot.dirViento+"</li><li>Marea: "+spot.marea+"</li><li>Dirección Swell: "+spot.dirSwell+"</li><li>Descripción Spot: "+spot.descripcionSpot+"</li>";
+        //mapa
+
+        divInfo.appendChild(listaInfo);
+        divInfo.classList.add("div-info");
+
+        var divImagen2 = document.createElement("div");
+        var img2 = document.createElement("img");
+        img2.src=spot.imagenSpot;
+        divImagen2.appendChild(img2);
+        divSpotPlus.appendChild(divImagen2);
+        divSpotPlus.appendChild(divInfo);
+        var btnInfo = document.createElement("button");
+        btnInfo.textContent="Cerrar";
+        btnInfo.addEventListener("click",function(){
+          $(".div-spot-plus").css("display","none");
+        })
+        divSpotPlus.appendChild(btnInfo);
+
+        divSpotPlus.classList.add("div-spot-plus");
+
+        document.getElementById("body-guide").appendChild(divSpotPlus);
+
+      };
 };
 window.onload=startJS;

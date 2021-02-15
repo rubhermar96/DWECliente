@@ -193,6 +193,21 @@ footer p{
     opacity: 70%;
 }
 
+/*DIV-SPOT-PLUS*/
+.div-spot-plus{
+    position: fixed;
+    bottom: 5%;
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    padding: 10px;
+    background-color: rgb(49,49,49);
+    color: whitesmoke;
+    z-index: 96;
+    display: none;
+}
+
 
 
 /*Media Querys*/

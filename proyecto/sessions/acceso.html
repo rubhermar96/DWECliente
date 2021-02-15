@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Proyecto DWEC Rubén Herrera Marcos-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Acceso</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="js/accesojs.js"></script>
+    <style>
+        body{
+            background-color: rgb(29, 29, 29);
+        }
+    </style>
+</head>
+<body id="body-guide">
+    <!--Header-->
+    <header>
+        <div class="logo-header">
+            <a href="index.html"><img src="../images/logo.png" alt=""></a>
+        </div>
+        <div class="titulo-header">
+            <h1>SurfGuide</h1>
+        </div>
+    </header>
+    <!--Nav-->
+    <nav>
+        <button class="material-icons" id="openMenu">menu</button>
+        <!--Menu Desplegable-->
+        <div class="menu-desplegable" id="menuDesp">
+            <button id="closeMenu">Cerrar</button>
+            <a href="../index.html">Inicio</a>
+            <a href="../guideSpots.html">Guía de Spots</a>
+            <a href="acceso.html">Mis Sesiones</a>
+        </div>
+    </nav>
+    <!--Main-->
+    <main>
+        <div class="main-title">
+            <h2>Formulario Acceso</h2>
+            <h3></h3>
+            <div class="form-acceso">
+                <label for="usuario">Usuario: </label>
+                <input type="text" name="usuario" id="user">
+                <label for="pass">Contraseña: </label>
+                <input type="text" name="pass" id="pass">
+                <label for="checkusuario">Recordar</label>
+                <input type="checkbox" name="checkusuario" id="checkusuario">
+                <button id="accederUsuario">Acceder</button>
+                <p>No tienes usuario? <a href="" id="abrirRegistro">Regístrate</a></p>
+            </div>
+            <div class="form-acceso">
+                <label for="rusuario">Usuario: </label>
+                <input type="text" name="rusuario" id="rusuario">
+                <label for="rpass">Contraseña: </label>
+                <input type="text" name="rpass" id="rpass">
+                <label for="nombreUsuario">Nombre: </label>
+                <input type="text" name="nombreUsuario" id="nombreUsuario">
+                <label for="apellidosUsuario">Apellidos: </label>
+                <input type="text" name="apellidosUsuario" id="apellidosUsuario">
+                <label for="checkregistro">Recordar</label>
+                <input type="checkbox" name="checkregistro" id="checkregistro">
+                <button id="registrarUsuario">Registrarse</button>
+            </div>
+        </div>
+    </main>
+    <!--Footer-->
+    <footer>
+        <p>Proyecto DWEC Rubén Herrera Marcos</p>
+    </footer>
+</body>
+</html>
