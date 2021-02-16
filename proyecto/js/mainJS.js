@@ -38,7 +38,7 @@ function startJS(){
         });
       });
       //CREACION BASE DE DATOS
-      var peticion,db,spotsGuide,usersGuide;			
+      var peticion,db,spotsGuide;			
 
       if (window.indexedDB) {
         peticion = window.indexedDB.open("surfGuide",4);
@@ -69,7 +69,6 @@ function startJS(){
                 cursor.continue();
               }
             }
-            db.close();
           }
         };
     
@@ -81,9 +80,11 @@ function startJS(){
           spotsGuide.createIndex("por_nombre", "nombre");
           spotsGuide.createIndex("por_localidad", "localidad");
           //Tabla usuarios
-          spotsGuide = db.createObjectStore("users",{keyPath:"cod_user",autoIncrement:true});
-          spotsGuide.createIndex("por_codigo","cod_user",{unique:true});
-          db.close()
+          spotsGuide = db.createObjectStore("users",{keyPath:"usuario",autoIncrement:false});
+          spotsGuide.createIndex("poc_nombreUsuario","usuario",{unique:true});
+          //Tabla sesiones
+          spotsGuide = db.createObjectStore("sessions",{keyPath:"usuario",autoIncrement:false});
+          spotsGuide.createIndex("por_nombreUsuario","usuario",{unique:false});
         };
       } else {
         console.log("IndexedDB no está soportado");

@@ -182,6 +182,7 @@ footer p{
     color: whitesmoke;
     padding: 12px;
     border:solid 2px whitesmoke;
+    border-radius: 5px;
     box-shadow: 0px 0px 2px 2px whitesmoke;
     margin: 10px;
 }
@@ -196,6 +197,7 @@ footer p{
 /*DIV-SPOT-PLUS*/
 .div-spot-plus{
     position: fixed;
+    flex-direction: column;
     bottom: 5%;
     top: 5%;
     left: 10%;
@@ -203,9 +205,85 @@ footer p{
     width: 80%;
     padding: 10px;
     background-color: rgb(49,49,49);
+    border:solid 2px whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px whitesmoke;
     color: whitesmoke;
     z-index: 96;
     display: none;
+}
+.div-spot-plus div img{
+    width: 50%;
+    padding: 5px;
+}
+.div-info{
+    width: 100%;
+    margin-top: 10px;
+}
+.div-info li{
+    padding: 5px;
+    list-style: none;
+    border-top: 1px whitesmoke solid;
+    font-size: 18px;
+}
+.div-spot-plus button{
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(49,49,49);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    font-size: 20px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+
+}
+.div-spot-plus button:hover{
+    background-color: rgb(161, 0, 0);
+}
+
+/*ACCESO*/
+.form-acceso{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px whitesmoke;
+
+}
+.form-acceso *{
+    padding: 5px;
+}
+.form-acceso a{
+    color: teal;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 1s;
+}
+.form-acceso a:hover{
+    color: whitesmoke;
+}
+.form-registro{
+    margin-top: 20px;
+    display: none;
+    flex-direction: column;
+    width: 70%;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px whitesmoke;
+}
+.form-registro *{
+    padding: 5px;
 }
 
 
