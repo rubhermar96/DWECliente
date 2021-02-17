@@ -315,12 +315,7 @@ footer p{
 .form-registro button:hover{
     background-color: rgba(0, 128, 128, 0.514);
 }
-#checkusuario{
-    width: 30px;
-}
-#checkregistro{
-    width: 30px;
-}
+
 /*Sessions*/
 #insertarSesion{
     background-color: teal;
