@@ -40,9 +40,9 @@
     <main>
         <div class="main-title">
             <h2>Mis Sesiones</h2>
-            <h3><button class="material-icons" id="insertarSesion">add</button></h3>
+            <h3><button class="material-icons" id="insertarSesion" draggable="true" ondragstart="drag(event)">add</button></h3>
         </div>
-        <div class="main-sessions" id="sesion-cont">
+        <div class="main-sessions" id="sesion-cont" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div class="sesiones"><div>Codigo</div><div>Spot</div><div>Fecha</div><div>Olas Surfeadas</div><div>Descripción</div></div>
         </div>
         <div class="new-session">
@@ -77,5 +77,16 @@
     <footer>
         <p>Proyecto DWEC Rubén Herrera Marcos</p>
     </footer>
+    <script>
+        function allowDrop(event){
+            event.preventDefault();
+        }
+        function drag(event){
+            event.dataTransfer.setData("text",event.target.id);
+        }
+        function drop(event){
+            $(".new-session").css("display","flex");
+        }
+    </script>
 </body>
 </html>
