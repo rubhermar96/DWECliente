@@ -19,7 +19,7 @@
     <!--Header-->
     <header>
         <div class="logo-header">
-            <a href="index.html"><img src="../images/logo.png" alt=""></a>
+            <a href="../index.html"><img src="../images/logo.png" alt=""></a>
         </div>
         <div class="titulo-header">
             <h1>SurfGuide</h1>
@@ -30,10 +30,9 @@
         <button class="material-icons" id="openMenu">menu</button>
         <!--Menu Desplegable-->
         <div class="menu-desplegable" id="menuDesp">
-            <button id="closeMenu">Cerrar</button>
+            <button id="closeMenu" class="material-icons">close</button>
             <a href="../index.html">Inicio</a>
             <a href="../guideSpots.html">Guía de Spots</a>
-            <a href="profile.html">Perfil</a>
             <a href="acceso.html">Salir</a>
         </div>
     </nav>
@@ -41,10 +40,37 @@
     <main>
         <div class="main-title">
             <h2>Mis Sesiones</h2>
-            <h3><button class="material-icons">add_box</button></h3>
+            <h3><button class="material-icons" id="insertarSesion">add</button></h3>
         </div>
-        <div class="main-sessions">
+        <div class="main-sessions" id="sesion-cont">
             <div class="sesiones"><div>Codigo</div><div>Spot</div><div>Fecha</div><div>Olas Surfeadas</div><div>Descripción</div></div>
+        </div>
+        <div class="new-session">
+            Spot:
+            <input type="text" name="spot" id="spot">
+            Fecha:
+            <input type="date" name="Fecha" id="fecha">
+            Número de Olas:
+            <input type="number" name="olas" id="olas">
+            Descripción Sesión:
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+            <button id="btninsertar" class="material-icons">add</button>
+            <button id="btnCerrar" class="material-icons">close</button>
+        </div>
+        <div class="mod-session">
+            Codigo:
+            <input type="text" name="codigo" id="codigo" disabled>
+            Spot:
+            <input type="text" name="spot" id="spot2">
+            Fecha:
+            <input type="date" name="Fecha" id="fecha2">
+            Número de Olas:
+            <input type="number" name="olas" id="olas2">
+            Descripción Sesión:
+            <textarea name="descripcion" id="descripcion2" cols="30" rows="10"></textarea>
+            <button id="btnmodificar" class="material-icons">mode</button>
+            <button id="btneliminar" class="material-icons">delete_forever</button>
+            <button id="btnCerrar2" class="material-icons">close</button>
         </div>
     </main>
     <!--Footer-->

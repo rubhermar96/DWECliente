@@ -14,6 +14,14 @@ function startJS(){
         
       });
     });
+    var userInfo = {};
+    userInfo.usuario= "";
+    userInfo.password = "";
+    userInfo.nombre = "";
+    userInfo.apellidos = "";
+        
+    var userInfoJSON = JSON.stringify(userInfo);
+    localStorage.setItem("userInfo",userInfoJSON);
 
     /*Controles Slider*/
     $(function(){
@@ -70,6 +78,23 @@ function startJS(){
               }
             }
           }
+          var spotsGuide2 = transaccion.objectStore("sessions");
+          var contadorSessions = spotsGuide2.count();
+          contadorSessions.onsuccess=function(){
+            if(contadorSessions.result<1){
+              spotsGuide2.put({usuario:"usuario1",spot:"El Palmar",fecha:"2021-02-04",olas:9,descripcion:"Baño tranquilo con poca gente, cogí 2 olas muy buenas e hice una maniobra nueva"});
+              spotsGuide2.put({usuario:"usuario1",spot:"La Fontanilla",fecha:"2021-02-10",olas:16,descripcion:"Olas flojitas pero divertidas, baño con amigos y mejorando la posición surfeando"});
+              spotsGuide2.put({usuario:"usuario2",spot:"La Fontanilla",fecha:"2021-02-12",olas:16,descripcion:"Olas flojitas pero divertidas, baño con amigos y mejorando la posición surfeando"}); 
+            }
+          }
+          spotsGuide3 = transaccion.objectStore("users");
+          var contadorUsers = spotsGuide3.count();
+          contadorUsers.onsuccess=function(){
+            if(contadorUsers.result<1){
+              spotsGuide3.put({usuario:"usuario1",nombreUsuario:"Rubén",apellidos:"H y M",password:"1234"});
+              spotsGuide3.put({usuario:"usuario2",nombreUsuario:"Rubén",apellidos:"H y M",password:"1234"});
+            }
+          }
         };
     
         peticion.onupgradeneeded = function (evento) {
@@ -83,8 +108,9 @@ function startJS(){
           spotsGuide = db.createObjectStore("users",{keyPath:"usuario",autoIncrement:false});
           spotsGuide.createIndex("poc_nombreUsuario","usuario",{unique:true});
           //Tabla sesiones
-          spotsGuide = db.createObjectStore("sessions",{keyPath:"usuario",autoIncrement:false});
-          spotsGuide.createIndex("por_nombreUsuario","usuario",{unique:false});
+          spotsGuide = db.createObjectStore("sessions",{keyPath:"cod_sesion",autoIncrement:true});
+          spotsGuide.createIndex("por_cod","cod_sesion",{unique:true});
+          spotsGuide.createIndex("por_usuario","usuario");
         };
       } else {
         console.log("IndexedDB no está soportado");
@@ -127,7 +153,9 @@ function startJS(){
 
         listaInfo.innerHTML = "<li>Nombre: "+spot.nombre+"</li><li>Localidad: "+spot.localidad+"</li><li>Tipo Rompiente: "+spot.rompiente+"</li><li>Viento: "+spot.dirViento+"</li><li>Marea: "+spot.marea+"</li><li>Dirección Swell: "+spot.dirSwell+"</li><li>Descripción Spot: "+spot.descripcionSpot+"</li>";
         //mapa
-
+        var divMapa = document.createElement("div");
+        var aux = spot.nombre;
+        divMapa.id = aux.replace(/ /g, "");
         divInfo.appendChild(listaInfo);
         divInfo.classList.add("div-info");
 
@@ -136,9 +164,11 @@ function startJS(){
         img2.src=spot.imagenSpot;
         divImagen2.appendChild(img2);
         divSpotPlus.appendChild(divImagen2);
+        divSpotPlus.appendChild(divMapa);
         divSpotPlus.appendChild(divInfo);
         var btnInfo = document.createElement("button");
-        btnInfo.textContent="Cerrar";
+        btnInfo.textContent="close";
+        btnInfo.classList.add("material-icons");
         btnInfo.addEventListener("click",function(){
           $(".div-spot-plus").css("display","none");
         })

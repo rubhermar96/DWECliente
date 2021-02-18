@@ -245,7 +245,9 @@ footer p{
 .div-spot-plus button:hover{
     background-color: rgb(161, 0, 0);
 }
-
+#mapid{
+    height:180px;
+}
 /*ACCESO*/
 .form-acceso{
     margin-top: 20px;
@@ -271,6 +273,20 @@ footer p{
 .form-acceso a:hover{
     color: whitesmoke;
 }
+.form-acceso button{
+    background-color: rgb(49,49,49);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+    margin-top: 20px;
+}
+.form-acceso button:hover{
+    background-color: rgba(0, 128, 128, 0.514);
+}
 .form-registro{
     margin-top: 20px;
     display: none;
@@ -285,16 +301,198 @@ footer p{
 .form-registro *{
     padding: 5px;
 }
+.form-registro button{
+    background-color: rgb(49,49,49);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+    margin-top: 20px;
+}
+.form-registro button:hover{
+    background-color: rgba(0, 128, 128, 0.514);
+}
+#checkusuario{
+    width: 30px;
+}
+#checkregistro{
+    width: 30px;
+}
 /*Sessions*/
+#insertarSesion{
+    background-color: teal;
+    border: 2px solid rgb(29,29,29);
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 1px rgb(29,29,29);
+    color: whitesmoke;
+    padding: 5px 35px 5px 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+    font-size: 40px;
+}
+#insertarSesion:hover{
+    background-color: rgb(112, 112, 112);
+}
 .main-sessions{
+    margin-top: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
     display: flex;
     flex-direction: column;
     padding: 10px;
     align-items: center;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px whitesmoke;
 }
 .sesiones{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    border-bottom: 2px solid teal;
+}
+.sesiones:hover{
+    background-color: rgb(112, 112, 112);
+    cursor: pointer;
+}
+.sesiones:first-child:hover{
+    background-color: rgb(29,29,29);
+    cursor: default;
+}
+.sesiones div{
+    display: flex;
+    padding: 10px;
+    border-right: 2px solid teal;
+    font-size: 20px;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    
+}
+.sesiones div:first-child{
+    width: 10%;
+}
+.sesiones div:last-child{
+    width: 30%;
+    border-right: none;
+}
+.new-session{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    bottom: 5%;
+    top: 5%;
+    left: 15%;
+    right: 15%;
+    width: 70%;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: rgb(49,49,49);
+    border:solid 2px whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px whitesmoke;
+    color: whitesmoke;
+    z-index: 96;
+    font-size: 20px;
+}
+.new-session *{
+    margin: 5px;
+    padding: 10px;
+}
+.new-session #btninsertar{
+    background-color: rgb(49,49,49);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+    margin-top: 20px;
+}
+.new-session #btninsertar:hover{
+    background-color: teal;
+}
+.new-session #btnCerrar{
+    background-color: rgb(161, 0, 0);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+.new-session #btnCerrar:hover{
+    background-color: rgb(112, 112, 112);
+}
+/*mod-session*/
+.mod-session{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    bottom: 5%;
+    top: 5%;
+    left: 15%;
+    right: 15%;
+    width: 70%;
+    padding: 20px;
+    padding-top: 30px;
+    background-color: rgb(49,49,49);
+    border:solid 2px whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px whitesmoke;
+    color: whitesmoke;
+    z-index: 96;
+    font-size: 20px;
+}
+.mod-session *{
+    margin:5px;
+    padding: 10px;
+}
+.mod-session #btnmodificar{
+    background-color: rgb(49,49,49);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+    margin-top: 20px;
+}
+.mod-session #btnmodificar:hover{
+    background-color: teal;
+}
+.mod-session #btnCerrar2{
+    background-color: rgb(161, 0, 0);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+.mod-session #btnCerrar2:hover{
+    background-color: rgb(112, 112, 112);
+}
+.mod-session #btneliminar{
+    background-color: rgb(161, 0, 0);
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    padding-left: 35px;
+    padding-right: 35px;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+.mod-session #btneliminar:hover{
+    background-color: rgb(112, 112, 112);
 }
 
 
