@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="recursos/jsPDF/jspdf.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    Nombre: <input type="text" name="nombre" id="nombre"><br><br>
+    Apellidos: <input type="text" name="apellidos" id="apellidos"><br><br>
+    Fecha Nacimiento: <input type="date" name="fechaNa" id="fechaNa"><br><br>
+    Sexo: <br><br>
+    <input type="radio" name="sexo" id="masculino" value="masculino"> Masculino <br><br>
+    <input type="radio" name="sexo" id="femenino" value="femenino"> Femenino <br><br>
+    <input type="checkbox" name="repite" id="repite"> Repite <br><br>
+    <button onclick="crearPDF();">Crear documento PDF</button>
+
+    <script type="text/javascript">
+        function crearPDF(){
+            var nombre = document.getElementById("nombre").value;
+            var apellidos = document.getElementById("apellidos").value;
+            var nacimiento = document.getElementById("fechaNa").value;
+            var sexo = document.getElementsByName("sexo").value;
+
+
+            var pdf = new jsPDF('portrait','mm','a4');
+            var arrayString = [];
+            arrayString[1]="Nombre: "+nombre;
+            arrayString[2]="Apellidos: "+apellidos;
+            arrayString[3]="Fecha Nacimiento: "+nacimiento;
+            /*arrayString[4]="Sexo: "+sexo;*/
+            pdf.text(30, 30, arrayString);
+
+            				//SALIDA DEL DOCUMENTO
+			var es_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+			if(es_chrome) {
+				var win = window.open();
+				win.document.write('<iframe src="' + pdf.output('datauri')  + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
+			}
+
+			var es_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+			if(es_firefox) {
+			    pdf.output('datauri');
+		    }
+        }
+    </script>
+</body>
+</html>
